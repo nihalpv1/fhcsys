@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Courses - FHC Institute</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <style>
+      /* Consistent Float Buttons */
+      .enquiry-float {
+        position: fixed;
+        bottom: 110px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #f7631b;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover {
+        background: #e55612;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .enquiry-float i {
+        margin-top: 5px;
+      }
+
+      .enquiry-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover .enquiry-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 36px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .whatsapp-float:hover {
+        background: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-float i {
+        margin-top: 5px;
+      }
+
+      .whatsapp-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover .whatsapp-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 100px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .enquiry-float {
+          bottom: 40px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .whatsapp-text,
+        .enquiry-text {
+          font-size: 12px;
+          padding: 6px 12px;
+          right: 60px;
+        }
+
+        .whatsapp-float:hover .whatsapp-text,
+        .enquiry-float:hover .enquiry-text {
+          right: 70px;
+        }
+      }
+
+      /* Logo size fix */
+      .navbar-brand img.custom-logo {
+        max-height: 50px;
+        width: auto;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-brand img.custom-logo {
+          max-height: 40px;
+        }
+      }
+
+      /* Navbar styles */
+      .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+      }
+
+      .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background: no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .navbar-light {
+        background-color: #f9f9ff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: #222 !important;
+        font-weight: 500;
+      }
+
+      .navbar-light .navbar-nav .active > .nav-link {
+        color: #f7631b !important;
+      }
+
+      .navbar-collapse {
+        transition: all 0.3s ease;
+      }
+
+      /* ==================== Course Page Styles ==================== */
+      .course-hero {
+        background: linear-gradient(
+            135deg,
+            rgba(247, 99, 27, 0.9) 0%,
+            rgba(249, 249, 255, 0.95) 100%
+          ),
+          url("img/course-banner.jpg") no-repeat center center;
+        background-size: cover;
+        padding: 160px 0 100px;
+        text-align: center;
+        position: relative;
+        color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        margin-bottom: 60px;
+      }
+
+      .course-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .course-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .hero-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 300px;
+      }
+
+      .divider-line {
+        flex: 1;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-divider i {
+        color: white;
+        margin: 0 15px;
+        font-size: 1.8rem;
+      }
+
+      /* Course Categories */
+      .course-categories {
+        padding: 80px 0 40px;
+        background: #f9f9ff;
+      }
+
+      .category-filter {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .category-btn {
+        padding: 10px 25px;
+        margin: 0 10px 15px;
+        background: transparent;
+        color: #555;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .category-btn:hover,
+      .category-btn.active {
+        background: #f7631b;
+        color: white;
+        border-color: #f7631b;
+      }
+
+      /* Course Cards */
+      .course-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .course-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .course-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .course-card:hover .course-img img {
+        transform: scale(1.1);
+      }
+
+      .course-content {
+        padding: 25px;
+      }
+
+      .course-category {
+        display: inline-block;
+        background: rgba(247, 99, 27, 0.1);
+        color: #f7631b;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .course-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      .course-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .course-meta i {
+        margin-right: 5px;
+        color: #f7631b;
+      }
+
+      .course-desc {
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .course-btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #f7631b;
+        color: white;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .course-btn:hover {
+        background: #e55612;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      /* Course Features Section */
+      .course-features {
+        padding: 80px 0;
+        background: url("img/feature-bg.jpg") no-repeat center center;
+        background-size: cover;
+        position: relative;
+      }
+
+      .course-features:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(249, 249, 255, 0.95);
+      }
+
+      .feature-box {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(247, 99, 27, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .feature-icon i {
+        font-size: 1.8rem;
+        color: #f7631b;
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      .feature-desc {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .testimonial-card:before {
+        content: "\201C";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 4rem;
+        color: rgba(247, 99, 27, 0.1);
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .testimonial-text {
+        color: #555;
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+      }
+
+      .author-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h5 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #222;
+      }
+
+      .author-info p {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f7631b 0%, #e55612 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .cta-desc {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background: white;
+        color: #f7631b;
+        border-radius: 30px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        color: #e55612;
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #f7631b;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* Footer Styles */
+      .footer-area {
+        background: #222;
+        padding: 120px 0 30px;
+      }
+
+      .single-footer-widget h4 {
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .single-footer-widget ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .single-footer-widget ul li {
+        margin-bottom: 15px;
+        color: #bbb;
+        font-size: 14px;
+      }
+
+      .single-footer-widget ul li i {
+        margin-right: 10px;
+        color: #f7631b;
+      }
+
+      .single-footer-widget ul li a {
+        color: #bbb;
+        transition: all 0.3s ease;
+      }
+
+      .single-footer-widget ul li a:hover {
+        color: #f7631b;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 30px;
+        margin-top: 50px;
+      }
+
+      .footer-text {
+        color: #bbb !important;
+      }
+
+      .footer-social a {
+        color: #bbb;
+        margin-left: 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        color: #f7631b;
+      }
+
+      /* ==================== New Course Sections ==================== */
+      /* Popular Courses */
+      .popular_courses {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .main_title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .main_title h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+      }
+
+      .main_title p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .single_course {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+      }
+
+      .single_course:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .course_head img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .course_content {
+        padding: 25px;
+      }
+
+      .tag {
+        background: rgba(247, 99, 27, 0.1);
+        color: #f7631b;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .course_meta {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .meta_info {
+        margin-right: 15px;
+      }
+
+      .meta_info i {
+        color: #f7631b;
+      }
+
+      /* Highlights Area */
+      .highlight_area {
+        padding: 80px 0;
+      }
+
+      .highlight-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .icon-bg {
+        width: 70px;
+        height: 70px;
+        background: rgba(247, 99, 27, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .icon-bg i {
+        font-size: 1.8rem;
+        color: #f7631b;
+      }
+
+      .highlight-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #f7631b;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
+      /* Course Description */
+      .course_description_area {
+        padding: 80px 0;
+      }
+
+      .description_image img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .description_text {
+        color: #555;
+        line-height: 1.8;
+      }
+
+      .description_text p {
+        margin-bottom: 20px;
+      }
+
+      .course_features {
+        margin-top: 40px;
+      }
+
+      .single_feature {
+        margin-bottom: 20px;
+      }
+
+      .single_feature .icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(247, 99, 27, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .single_feature .icon i {
+        color: #f7631b;
+        font-size: 1.2rem;
+      }
+
+      .feature_content h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      /* Eligibility Criteria */
+      .eligibility_area {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .eligibility_card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .card_header {
+        padding: 20px;
+        color: white;
+      }
+
+      .card_header.bg-primary {
+        background: #f7631b !important;
+      }
+
+      .card_header.bg-danger {
+        background: #dc3545 !important;
+      }
+
+      .card_header.bg-info {
+        background: #17a2b8 !important;
+      }
+
+      .card_header.bg-success {
+        background: #28a745 !important;
+      }
+
+      .card_header h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .card_header i {
+        margin-right: 10px;
+      }
+
+      .card_body {
+        padding: 20px;
+      }
+
+      .card_body p {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .card_body ul {
+        padding-left: 20px;
+      }
+
+      .card_body li {
+        margin-bottom: 8px;
+      }
+
+      .documents_required {
+        margin-top: 40px;
+      }
+
+      .documents_required h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .list-group-item {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        border-radius: 8px !important;
+      }
+
+      .badge-pill {
+        border-radius: 50%;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1200px) {
+        .course-hero {
+          padding: 140px 0 90px;
+        }
+
+        .course-hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .course-hero {
+          padding: 120px 0 80px;
+          clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .course-hero h1 {
+          font-size: 2.4rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .course-hero {
+          padding: 100px 0 70px;
+        }
+
+        .course-hero h1 {
+          font-size: 2rem;
+        }
+
+        .course-hero p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .category-filter {
+          justify-content: flex-start;
+        }
+
+        .category-btn {
+          padding: 8px 20px;
+          margin: 0 8px 10px 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .course-hero {
+          padding: 80px 0 60px;
+          clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+        }
+
+        .course-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+
+        .cta-title {
+          font-size: 1.8rem;
+        }
+      }
+           /* Enhanced Enquiry Modal Styles */
+      #enquiryModal .modal-content {
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      #enquiryModal .modal-header {
+        border-bottom: none;
+        padding: 25px 25px 5px;
+        background: linear-gradient(135deg, #f7631b 0%, #e55612 100%);
+        color: white;
+      }
+
+      #enquiryModal .modal-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      #enquiryModal .close {
+        color: white;
+        text-shadow: none;
+        opacity: 0.8;
+      }
+
+      #enquiryModal .close:hover {
+        opacity: 1;
+      }
+
+      #enquiryModal .modal-body {
+        padding: 25px;
+      }
+
+      #enquiryModal .modal-footer {
+        border-top: none;
+        padding: 0 25px 25px;
+        justify-content: space-between;
+      }
+
+      #enquiryModal .form-control {
+        border-radius: 10px;
+        padding: 14px 18px;
+        border: 2px solid #eee;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .form-control:focus {
+        border-color: #f7631b;
+        box-shadow: 0 0 0 0.2rem rgba(247, 99, 27, 0.25);
+      }
+
+      #enquiryModal .btn-submit {
+        background-color: #f7631b;
+        border-color: #f7631b;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-submit:hover {
+        background-color: #e55612;
+        border-color: #e55612;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      #enquiryModal .btn-close {
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-close:hover {
+        background-color: #f1f1f1;
+      }
+
+      #enquiryModal label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      /* Mobile-specific styles */
+      @media (max-width: 768px) {
+        #enquiryModal .modal-dialog {
+          margin: 20px;
+        }
+
+        #enquiryModal .modal-header {
+          padding: 20px 20px 5px;
+        }
+
+        #enquiryModal .modal-body {
+          padding: 20px;
+        }
+
+        #enquiryModal .modal-footer {
+          padding: 0 20px 20px;
+        }
+
+        #enquiryModal .form-control {
+          padding: 12px 15px;
+          font-size: 0.95rem;
+        }
+
+        #enquiryModal .btn-submit,
+        #enquiryModal .btn-close {
+          padding: 10px 20px;
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Animation for modal */
+      .modal.fade .modal-dialog {
+        transform: translateY(20px);
+        transition: transform 0.3s ease-out;
+      }
+
+      .modal.show .modal-dialog {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand logo_h" href="index.html">
+              <img
+                src="img/FORMENlogo2 (1).png"
+                alt="FHC Institute Logo"
+                class="img-fluid custom-logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#about-section">About</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#faculty-section"
+                    >Faculties</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="careers.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#contact-section"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--================ End Header Menu Area =================-->
+
+    <!--================ Start Course Hero Section =================-->
+    <!--================ Start Course Hero Section =================-->
+    <section class="subpage-hero-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="subpage-hero-content text-center">
+              <div class="mb-3">
+                <span
+                  class="badge badge-primary px-4 py-2"
+                  style="
+                    background: rgba(247, 99, 27, 0.1);
+                    color: #f7631b;
+                    font-size: 1rem;
+                  "
+                >
+                  <i class="fas fa-graduation-cap mr-2"></i> FHC Institute
+                  Courses
+                </span>
+              </div>
+              <h1
+                class="mb-3"
+                style="font-size: 2.5rem; font-weight: 700; color: #222"
+              >
+                Our Paramedical Programs
+              </h1>
+              <p
+                class="mb-4"
+                style="
+                  font-size: 1.2rem;
+                  color: #555;
+                  max-width: 700px;
+                  margin: 0 auto;
+                "
+              >
+                Transform your passion for healthcare into a rewarding career
+                with our industry-focused programs
+              </p>
+              <div class="hero-divider">
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+                <i
+                  class="fas fa-heartbeat mx-3"
+                  style="color: #f7631b; font-size: 1.8rem"
+                ></i>
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .subpage-hero-area {
+        background: linear-gradient(
+            135deg,
+            rgba(247, 99, 27, 0.03) 0%,
+            rgba(249, 249, 255, 0.95) 100%
+          ),
+          url("img/course-banner.jpg") no-repeat center center;
+        background-size: cover;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      @media (max-width: 768px) {
+        .subpage-hero-area {
+          padding: 100px 0 60px;
+        }
+        .subpage-hero-content h1 {
+          font-size: 2rem !important;
+        }
+        .subpage-hero-content p {
+          font-size: 1rem !important;
+          padding: 0 20px;
+        }
+      }
+    </style>
+    <!--================ End Course Hero Section =================-->
+    <!--================ End Course Hero Section =================-->
+    <!--================ End Course Hero Section =================-->
+
+    <!--================ Start Popular Courses Area =================-->
+    <div class="popular_courses">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">COURSES WE PROVIDE</h2>
+              <p>
+                Quality education in healthcare technology and administration
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- B.Voc in Dialysis Technology -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single_course">
+              <div class="course_head">
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt="Dialysis Technology"
+                />
+              </div>
+              <div class="course_content">
+                <span class="tag mb-4 d-inline-block">Medical Technology</span>
+                <h4 class="mb-3">
+                  <a href="course-details.html"
+                    >Bachelor of Vocation (B.Voc)<br />in Dialysis Technology<br />(3
+                    YEARS)</a
+                  >
+                </h4>
+                <p>
+                  Comprehensive training in dialysis procedures, equipment
+                  handling, and patient care for renal failure patients.
+                </p>
+                <div
+                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                >
+                  <div class="mt-lg-0 mt-3">
+                    <span class="meta_info mr-4">
+                      <a href="#"> <i class="ti-user mr-2"></i>40 Seats </a>
+                    </span>
+                    <span class="meta_info">
+                      <a href="#"> <i class="ti-calendar mr-2"></i>Annual </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B.Sc in Dialysis Technology -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single_course">
+              <div class="course_head">
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt="Dialysis Science"
+                />
+              </div>
+              <div class="course_content">
+                <span class="tag mb-4 d-inline-block">Medical Science</span>
+                <h4 class="mb-3">
+                  <a href="course-details.html"
+                    >Bachelor of Science (B.Sc)<br />in Dialysis Technology<br />(3
+                    YEARS)</a
+                  >
+                </h4>
+                <p>
+                  Scientific approach to dialysis technology with emphasis on
+                  renal physiology and advanced treatment methods.
+                </p>
+                <div
+                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                >
+                  <div class="mt-lg-0 mt-3">
+                    <span class="meta_info mr-4">
+                      <a href="#"> <i class="ti-user mr-2"></i>40 Seats </a>
+                    </span>
+                    <span class="meta_info">
+                      <a href="#"> <i class="ti-calendar mr-2"></i>Annual </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hospital Administration & GDA -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single_course">
+              <div class="course_head">
+                <img
+                  class="img-fluid"
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt="Hospital Administration"
+                />
+              </div>
+              <div class="course_content">
+                <span class="tag mb-4 d-inline-block"
+                  >Healthcare Management</span
+                >
+                <h4 class="mb-3">
+                  <a href="course-details.html"
+                    >Hospital Administration<br />& General Duty Assistant
+                    (GDA)<br />(6 MONTHS)</a
+                  >
+                </h4>
+                <p>
+                  Training in hospital operations management and basic patient
+                  care skills for healthcare support roles.
+                </p>
+                <div
+                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                >
+                  <div class="mt-lg-0 mt-3">
+                    <span class="meta_info mr-4">
+                      <a href="#"> <i class="ti-user mr-2"></i>60 Seats </a>
+                    </span>
+                    <span class="meta_info">
+                      <a href="#"> <i class="ti-calendar mr-2"></i>Biannual </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Popular Courses Area =================-->
+
+    <!--================ Start Highlights Area =================-->
+    <section class="highlight_area section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="main_title">
+              <h2 class="mb-3">Why Our Courses Stand Out</h2>
+              <p class="lead">
+                Discover what makes our dialysis programs exceptional
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Job Placement -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <div class="icon-bg">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>100% Placement Support</h4>
+                <p>
+                  Dedicated career services with our network of 200+ dialysis
+                  centers across India
+                </p>
+                <div class="highlight-badge">Most Popular</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Practical Training -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <div class="icon-bg">
+                <i class="fas fa-hand-holding-medical"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>600+ Clinical Hours</h4>
+                <p>
+                  Hands-on training with modern dialysis equipment under
+                  nephrologist supervision
+                </p>
+                <div class="highlight-badge">Industry Focused</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert Instructors -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <div class="icon-bg">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>Learn From Experts</h4>
+                <p>
+                  Faculty with 10-15 years clinical experience in nephrology and
+                  dialysis care
+                </p>
+                <div class="highlight-badge">Expert Led</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Highlights Area =================-->
+
+    <!--================ Start Course Description Area =================-->
+    <section class="course_description_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="main_title text-center">
+              <h2 class="mb-4">COURSE DESCRIPTION</h2>
+            </div>
+
+            <div class="course_description_content">
+              <div class="description_image">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  alt="Dialysis Treatment"
+                  class="img-fluid rounded"
+                />
+              </div>
+
+              <div class="description_text mt-5">
+                <p>
+                  This course focuses on the removal of nitrogenous waste
+                  products from the body through haemodialysis. Dialysis
+                  technologists play a critical role in the healthcare team by
+                  ensuring safe and hygienic dialysis treatments for patients.
+                </p>
+
+                <p>
+                  Throughout the course, students will acquire knowledge and
+                  skills related to various procedures, equipment operations,
+                  and patient-handling techniques. Additionally, they will learn
+                  about the clinical aspects of dialysis treatment and the vital
+                  role of the dialysis technologist within a healthcare setting.
+                </p>
+
+                <p>
+                  Specifically, the course will cover topics such as machine
+                  preparation, performing procedures under the guidance of a
+                  nephrologist, and monitoring patients throughout the dialysis
+                  process to ensure optimal care. By the end of the course,
+                  students will be equipped with the necessary skills to provide
+                  effective dialysis treatment as part of a multidisciplinary
+                  healthcare team.
+                </p>
+              </div>
+
+              <div class="course_features mt-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="single_feature d-flex">
+                      <div class="icon mr-3"><i class="ti-settings"></i></div>
+                      <div class="feature_content">
+                        <h4>Equipment Mastery</h4>
+                        <p>
+                          Comprehensive training on dialysis machines and
+                          related medical equipment
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="single_feature d-flex">
+                      <div class="icon mr-3"><i class="ti-heart"></i></div>
+                      <div class="feature_content">
+                        <h4>Patient Care</h4>
+                        <p>
+                          Specialized techniques for handling and monitoring
+                          dialysis patients
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mt-4">
+                    <div class="single_feature d-flex">
+                      <div class="icon mr-3"><i class="ti-shield"></i></div>
+                      <div class="feature_content">
+                        <h4>Safety Protocols</h4>
+                        <p>
+                          Rigorous training in infection control and treatment
+                          safety standards
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mt-4">
+                    <div class="single_feature d-flex">
+                      <div class="icon mr-3"><i class="ti-book"></i></div>
+                      <div class="feature_content">
+                        <h4>Theoretical Foundation</h4>
+                        <p>
+                          In-depth understanding of renal physiology and
+                          dialysis principles
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Course Description Area =================-->
+
+    <!--================ Start Eligibility Criteria Area =================-->
+    <section class="eligibility_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="main_title text-center">
+              <h2 class="mb-5">ELIGIBILITY CRITERIA</h2>
+            </div>
+
+            <div class="eligibility_content">
+              <div class="row">
+                <!-- B.Voc Card -->
+                <div class="col-lg-6 col-md-6">
+                  <div class="eligibility_card">
+                    <div class="card_header bg-primary">
+                      <h4>
+                        <i class="ti-medical-alt mr-3"></i>B.Voc in Dialysis
+                        Technology
+                      </h4>
+                    </div>
+                    <div class="card_body">
+                      <p><strong>Educational Qualification:</strong></p>
+                      <ul>
+                        <li>Plus Two With Any Stream</li>
+                        <li>
+                          Candidates must have completed Higher Secondary
+                          Education (+2) in any stream from a recognized Indian
+                          Board or University, with a minimum of passing marks.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- B.Sc Card -->
+                <div class="col-lg-6 col-md-6">
+                  <div class="eligibility_card">
+                    <div class="card_header bg-danger">
+                      <h4>
+                        <i class="ti-ruler-pencil mr-3"></i>B.Sc in Dialysis
+                        Technology
+                      </h4>
+                    </div>
+                    <div class="card_body">
+                      <p><strong>Educational Qualification:</strong></p>
+                      <ul>
+                        <li>Plus Two With Science Stream</li>
+                        <li>
+                          Candidates must have completed Higher Secondary
+                          Education (+2) in Science stream from a recognized
+                          Indian Board or University, with a minimum of passing
+                          marks.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hospital Admin Card -->
+                <div class="col-lg-6 col-md-6 mt-4">
+                  <div class="eligibility_card">
+                    <div class="card_header bg-info">
+                      <h4>
+                        <i class="ti-home mr-3"></i>Hospital Administration
+                      </h4>
+                    </div>
+                    <div class="card_body">
+                      <p><strong>Educational Qualification:</strong></p>
+                      <ul>
+                        <li>Plus Two With Any Stream</li>
+                        <li>
+                          Candidates must have completed Higher Secondary
+                          Education (+2) in any stream from a recognized Indian
+                          Board or University, with a minimum of passing marks.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- GDA Card -->
+                <div class="col-lg-6 col-md-6 mt-4">
+                  <div class="eligibility_card">
+                    <div class="card_header bg-success">
+                      <h4>
+                        <i class="ti-user mr-3"></i>General Duty Assistant
+                      </h4>
+                    </div>
+                    <div class="card_body">
+                      <p><strong>Educational Qualification:</strong></p>
+                      <ul>
+                        <li>SSLC</li>
+                        <li>
+                          Candidates must have completed Highschool Education
+                          (SSLC).
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Documents Required -->
+              <div class="documents_required mt-5">
+                <div class="section_title">
+                  <h3 class="mb-4">
+                    Necessary Documents to be submitted along with the
+                    application
+                  </h3>
+                </div>
+                <div class="documents_list">
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+                      <span class="badge badge-primary badge-pill mr-3">1</span>
+                      SSLC original & 2 Nos. gazette/Self attested copies
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                      <span class="badge badge-primary badge-pill mr-3">2</span>
+                      PLUS TWO original & 2 Nos. gazette/Self attested copies
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                      <span class="badge badge-primary badge-pill mr-3">3</span>
+                      Migration certificate & Transfer certificate original
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                      <span class="badge badge-primary badge-pill mr-3">4</span>
+                      Copy of Aadhaar card
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                      <span class="badge badge-primary badge-pill mr-3">5</span>
+                      Passport size photo (8 Nos.)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Eligibility Criteria Area =================-->
+
+    <!--================ Start Course Features Section =================-->
+    <section class="course-features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose Our Courses</h2>
+          <p>
+            We provide exceptional education and training that sets you up for
+            success in healthcare careers
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h3 class="feature-title">Expert Faculty</h3>
+              <p class="feature-desc">
+                Learn from experienced professionals and educators with
+                extensive industry knowledge.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-hospital"></i>
+              </div>
+              <h3 class="feature-title">Practical Training</h3>
+              <p class="feature-desc">
+                Hands-on experience with modern equipment in simulated and real
+                clinical environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 class="feature-title">Placement Support</h3>
+              <p class="feature-desc">
+                Strong industry connections and placement assistance for our
+                graduates.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="feature-title">Recognized Certification</h3>
+              <p class="feature-desc">
+                Courses approved by relevant healthcare education authorities
+                and boards.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-user-friends"></i>
+              </div>
+              <h3 class="feature-title">Small Batch Sizes</h3>
+              <p class="feature-desc">
+                Personalized attention with limited students per batch for
+                better learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-stethoscope"></i>
+              </div>
+              <h3 class="feature-title">Modern Curriculum</h3>
+              <p class="feature-desc">
+                Up-to-date course content aligned with current healthcare
+                industry standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Course Features Section =================-->
+
+    <!--================ Start Testimonials Section =================-->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Students Say</h2>
+          <p>
+            Hear from our alumni about their learning experience at FHC
+            Institute
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                The B.Sc Dialysis program gave me both theoretical knowledge and
+                practical skills that helped me secure a job immediately after
+                graduation.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-img">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Student"
+                  />
+                </div>
+                <div class="author-info">
+                  <h5>Anjali Menon</h5>
+                  <p>B.Sc Dialysis, 2021</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                The hands-on training with actual dialysis machines prepared me
+                for real-world challenges in nephrology departments.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-img">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Student"
+                  />
+                </div>
+                <div class="author-info">
+                  <h5>Rahul Kumar</h5>
+                  <p>B.Voc Dialysis, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                The faculty's industry experience and personalized guidance
+                helped me transition smoothly into my hospital administration
+                role.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-img">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Student"
+                  />
+                </div>
+                <div class="author-info">
+                  <h5>Priya Suresh</h5>
+                  <p>Hospital Admin, 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Testimonials Section =================-->
+
+    <!--================ Start CTA Section =================-->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Ready to Start Your Healthcare Career?</h2>
+        <p class="cta-desc">
+          Join FHC Institute and take the first step towards a rewarding career
+          in paramedical sciences
+        </p>
+        <a href="index.html#contact-section" class="cta-btn">Enquire Now</a>
+      </div>
+    </section>
+    <!--================ End CTA Section =================-->
+
+    <!--================ Start footer Area  =================-->
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          <!-- Institute Info -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>FHC INSTITUTE OF PARAMEDICAL SCIENCE</h4>
+            <ul>
+              <li>
+                <i class="ti-location-pin"></i> CD TOWER, 4th floor, Opposite to
+                Baby Memorial Hospital, Calicut
+              </li>
+              <li><i class="ti-mobile"></i> +91 8113 884 477</li>
+              <li><i class="ti-mobile"></i> +91 8593 883 322</li>
+              <li><i class="ti-email"></i> info@fhcinstitute.com</li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about-section">About</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="index.html#faculty-section">Faculties</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="index.html#contact-section">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Courses -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Courses</h4>
+            <ul>
+              <li><a href="#">B.Voc Dialysis</a></li>
+              <li><a href="#">B.Sc Dialysis</a></li>
+              <li><a href="#">Hospital Admin</a></li>
+              <li><a href="#">GDA Program</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates about courses and admission details</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://formspree.io/f/your-form-id"
+                method="post"
+                class="form-inline"
+              >
+                <!-- Uncomment and configure to activate -->
+                <!-- 
+            <input
+              class="form-control"
+              name="email"
+              placeholder="Your Email Address"
+              required
+              type="email"
+            />
+            <button class="click-btn btn btn-default">
+              <span>Subscribe</span>
+            </button>
+            -->
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | FHC Institute of Paramedical Science
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href="#"><i class="ti-facebook"></i></a>
+            <a href="#"><i class="ti-twitter"></i></a>
+            <a href="#"><i class="ti-instagram"></i></a>
+            <a href="#"><i class="ti-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/918113884477"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+      </a>
+    </div>
+
+ <div class="enquiry-float">
+      <a href="#" id="enquiryButton" style="color: white">
+        <i class="fas fa-question"></i>
+        <span class="enquiry-text">Have a question?</span>
+      </a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="enquiryModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="enquiryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enquiryModalLabel">
+              <i class="fas fa-question-circle mr-2"></i>Quick Enquiry
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="enquiryForm">
+              <div class="form-group">
+                <label for="name"
+                  ><i class="fas fa-user mr-2"></i>Full Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone"
+                  ><i class="fas fa-phone-alt mr-2"></i>Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="+91 9876543210"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email"
+                  ><i class="fas fa-envelope mr-2"></i>Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="question"
+                  ><i class="fas fa-comment-dots mr-2"></i>Your Question</label
+                >
+                <textarea
+                  class="form-control"
+                  id="question"
+                  rows="3"
+                  placeholder="I'd like to know about..."
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-light btn-close"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-submit"
+              id="submitEnquiry"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <script>
+      // Course filter functionality
+      $(".category-btn").click(function () {
+        // Remove active class from all buttons
+        $(".category-btn").removeClass("active");
+        // Add active class to clicked button
+        $(this).addClass("active");
+
+        var filterValue = $(this).data("filter");
+
+        if (filterValue === "all") {
+          $(".col-lg-4").fadeIn(400);
+        } else {
+          $(".col-lg-4").each(function () {
+            if ($(this).data("category") === filterValue) {
+              $(this).fadeIn(400);
+            } else {
+              $(this).fadeOut(400);
+            }
+          });
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      $('a[href*="#"]').on("click", function (e) {
+        e.preventDefault();
+
+        var target = $(this.hash);
+        if (target.length) {
+          var scrollTo = target.offset().top - 80;
+
+          $("html, body").stop().animate(
+            {
+              scrollTop: scrollTo,
+            },
+            800
+          );
+        }
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Handle navigation from other pages to index.html sections
+        $('a[href*="#"]').on("click", function (e) {
+          // Check if link points to index.html
+          if (this.href.indexOf("index.html") !== -1 && this.hash !== "") {
+            e.preventDefault();
+
+            // Store the target section
+            var targetSection = this.hash;
+
+            // Navigate to index.html first
+            window.location.href = this.href;
+
+            // After page loads, scroll to the section
+            $(window).on("load", function () {
+              if (window.location.hash === targetSection) {
+                var target = $(targetSection);
+                if (target.length) {
+                  $("html, body").animate(
+                    {
+                      scrollTop: target.offset().top - 80,
+                    },
+                    800
+                  );
+                }
+              }
+            });
+          }
+        });
+      });
+    </script>
+     <script>
+    $(document).ready(function() {
+      // Handle enquiry button click
+      $('#enquiryButton').click(function(e) {
+        e.preventDefault();
+        $('#enquiryModal').modal('show');
+        
+        // Reset form when modal is shown
+        $('#enquiryForm')[0].reset();
+      });
+      
+      // Handle form submission with better UX
+      $('#submitEnquiry').click(function() {
+        var $btn = $(this);
+        var originalText = $btn.html();
+        
+        // Get form values
+        var name = $('#name').val().trim();
+        var phone = $('#phone').val().trim();
+        var email = $('#email').val().trim();
+        var question = $('#question').val().trim();
+        
+        // Validate form
+        if(!name) {
+          showError($('#name'), 'Please enter your name');
+          return;
+        }
+        
+        if(!phone || !/^[0-9]{10,15}$/.test(phone)) {
+          showError($('#phone'), 'Please enter a valid phone number');
+          return;
+        }
+        
+        if(!email || !/^\S+@\S+\.\S+$/.test(email)) {
+          showError($('#email'), 'Please enter a valid email');
+          return;
+        }
+        
+        if(!question) {
+          showError($('#question'), 'Please enter your question');
+          return;
+        }
+        
+        // Show loading state
+        $btn.html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Submitting...');
+        $btn.prop('disabled', true);
+        
+        // Simulate AJAX submission (replace with actual AJAX call)
+        setTimeout(function() {
+          // On success
+          $btn.html('<i class="fas fa-check mr-2"></i> Submitted!');
+          
+          // Show success message
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank You!',
+            text: 'We have received your enquiry and will contact you shortly.',
+            confirmButtonColor: '#f7631b',
+          }).then(() => {
+            $('#enquiryModal').modal('hide');
+            $btn.html(originalText).prop('disabled', false);
+          });
+          
+          // In real implementation, you would have:
+          // $.ajax({
+          //   url: 'submit-enquiry.php',
+          //   method: 'POST',
+          //   data: {name, phone, email, question},
+          //   success: function(response) {
+          //     // Handle success
+          //   },
+          //   error: function() {
+          //     // Handle error
+          //   }
+          // });
+          
+        }, 1500);
+      });
+      
+      // Clear error when user starts typing
+      $('.form-control').on('input', function() {
+        $(this).removeClass('is-invalid');
+        $(this).next('.invalid-feedback').remove();
+      });
+      
+      // Helper function to show errors
+      function showError($element, message) {
+        $element.addClass('is-invalid');
+        $element.after('<div class="invalid-feedback" style="display:block;">'+message+'</div>');
+        $element.focus();
+        
+        // Shake animation for error
+        $element.parent().addClass('animate__animated animate__headShake');
+        setTimeout(function() {
+          $element.parent().removeClass('animate__animated animate__headShake');
+        }, 1000);
+      }
+    });
+  </script>
+
+  <!-- Add these CDN links to your head section if not already present -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  </body>
+</html>

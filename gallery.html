@@ -1,0 +1,3902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Gallery - FHC Institute</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Animation and SweetAlert CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <!-- Magnific Popup CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+    />
+    <style>
+      /* Gallery transition styles */
+      .gallery-grid {
+        transition: height 0.4s ease;
+      }
+
+      .filter-transition {
+        min-height: 800px; /* Adjusted based on your gallery height */
+      }
+
+      /* Footer stabilization */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .gallery-container {
+        flex: 1;
+        min-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .enquiry-float {
+        position: fixed;
+        bottom: 110px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #f7631b;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover {
+        background: #e55612;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .enquiry-float i {
+        margin-top: 5px;
+      }
+
+      .enquiry-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover .enquiry-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 36px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .whatsapp-float:hover {
+        background: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-float i {
+        margin-top: 5px;
+      }
+
+      .whatsapp-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover .whatsapp-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      /* Mobile responsive adjustments for both float buttons */
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 100px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .enquiry-float {
+          bottom: 40px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .whatsapp-text,
+        .enquiry-text {
+          font-size: 12px;
+          padding: 6px 12px;
+          right: 60px;
+        }
+
+        .whatsapp-float:hover .whatsapp-text,
+        .enquiry-float:hover .enquiry-text {
+          right: 70px;
+        }
+      }
+
+      /* Logo size fix */
+      .navbar-brand img.custom-logo {
+        max-height: 50px;
+        width: auto;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-brand img.custom-logo {
+          max-height: 40px;
+        }
+      }
+      /* Ensure navbar toggler is visible */
+      .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+      }
+
+      .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background: no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      /* Navbar fixes */
+      .navbar-light {
+        background-color: #f9f9ff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: #222 !important;
+        font-weight: 500;
+      }
+
+      .navbar-light .navbar-nav .active > .nav-link {
+        color: #f7631b !important;
+      }
+
+      .navbar-collapse {
+        transition: all 0.3s ease;
+      }
+
+      /* foooter */
+
+      /* Footer Area css */
+      .footer-area {
+        background: #222;
+        padding: 120px 0 30px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .single-footer-widget h4 {
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .single-footer-widget ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .single-footer-widget ul li {
+        margin-bottom: 15px;
+        color: #bbb;
+        font-size: 14px;
+      }
+
+      .single-footer-widget ul li i {
+        margin-right: 10px;
+        color: #f7631b;
+      }
+
+      .single-footer-widget ul li a {
+        color: #bbb;
+        transition: all 0.3s ease;
+      }
+
+      .single-footer-widget ul li a:hover {
+        color: #f7631b;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 30px;
+        margin-top: 50px;
+      }
+
+      .footer-text {
+        color: #bbb !important;
+      }
+
+      .footer-social a {
+        color: #bbb;
+        margin-left: 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        color: #f7631b;
+      }
+      .director_content blockquote footer {
+        color: #777;
+        font-size: 14px;
+      }
+      .footer-area {
+        padding: 60px 0 30px !important;
+      }
+
+      .single-footer-widget {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .single-footer-widget {
+          text-align: left;
+        }
+      }
+
+      .footer-bottom {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .footer-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-align: left;
+        }
+      }
+
+      .footer-social {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .footer-social {
+          justify-content: flex-end;
+          margin-top: 0;
+        }
+      }
+
+      /* ==================== Modern Gallery Styles ==================== */
+      .gallery-hero {
+        background: linear-gradient(
+            135deg,
+            rgba(247, 99, 27, 0.9) 0%,
+            rgba(249, 249, 255, 0.95) 100%
+          ),
+          url("img/gallery-banner.jpg") no-repeat center center;
+        background-size: cover;
+        padding: 160px 0 100px;
+        text-align: center;
+        position: relative;
+        color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        margin-bottom: 60px;
+      }
+
+      .gallery-hero h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .hero-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 300px;
+      }
+
+      .divider-line {
+        flex: 1;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-divider i {
+        color: white;
+        margin: 0 15px;
+        font-size: 1.8rem;
+      }
+
+      /* Gallery Filter Controls */
+      .gallery-filter {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .filter-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        margin: 0 5px 10px;
+        background: transparent;
+        color: #555;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: #f7631b;
+        color: white;
+        border-color: #f7631b;
+        transform: translateY(-2px);
+      }
+
+      /* Modern Masonry Grid */
+      .gallery-container {
+        padding: 60px 0 100px;
+        background: #f9f9ff;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+        will-change: transform, opacity;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        padding-bottom: 75%; /* 4:3 aspect ratio (adjust as needed) */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.08);
+        filter: brightness(1.05);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7) 0%,
+          transparent 100%
+        );
+        color: white;
+        padding: 80px 20px 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-caption {
+        opacity: 1;
+      }
+
+      .gallery-caption h5 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .gallery-caption p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 0;
+      }
+
+      /* Gallery Categories */
+      .category-label {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(247, 99, 27, 0.9);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 2;
+      }
+
+      /* Lightbox Modal */
+      .modal-lightbox .modal-dialog {
+        max-width: 90%;
+        max-height: 90vh;
+        margin: 5vh auto;
+      }
+
+      .modal-lightbox .modal-content {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
+
+      .modal-lightbox .modal-body {
+        padding: 0;
+        text-align: center;
+      }
+
+      .modal-lightbox img {
+        max-height: 80vh;
+        width: auto;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .modal-lightbox.show img {
+        opacity: 1;
+      }
+
+      .modal-lightbox .close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        color: white;
+        opacity: 1;
+        text-shadow: none;
+        font-size: 2.5rem;
+        background: none;
+        border: none;
+        z-index: 1051;
+        transition: all 0.3s ease;
+      }
+
+      .modal-lightbox .close:hover {
+        transform: rotate(90deg);
+      }
+
+      /* Gallery Section Title */
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #f7631b;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1200px) {
+        .gallery-hero {
+          padding: 140px 0 90px;
+        }
+
+        .gallery-hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .gallery-hero {
+          padding: 120px 0 80px;
+          clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .gallery-hero h1 {
+          font-size: 2.4rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-hero {
+          padding: 100px 0 70px;
+        }
+
+        .gallery-hero h1 {
+          font-size: 2rem;
+        }
+
+        .gallery-hero p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-hero {
+          padding: 80px 0 60px;
+          clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+        }
+
+        .gallery-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .filter-btn {
+          padding: 6px 15px;
+          font-size: 0.9rem;
+          margin: 0 3px 8px;
+        }
+
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+      }
+      /* Enhanced Enquiry Modal Styles */
+      #enquiryModal .modal-content {
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      #enquiryModal .modal-header {
+        border-bottom: none;
+        padding: 25px 25px 5px;
+        background: linear-gradient(135deg, #f7631b 0%, #e55612 100%);
+        color: white;
+      }
+
+      #enquiryModal .modal-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      #enquiryModal .close {
+        color: white;
+        text-shadow: none;
+        opacity: 0.8;
+      }
+
+      #enquiryModal .close:hover {
+        opacity: 1;
+      }
+
+      #enquiryModal .modal-body {
+        padding: 25px;
+      }
+
+      #enquiryModal .modal-footer {
+        border-top: none;
+        padding: 0 25px 25px;
+        justify-content: space-between;
+      }
+
+      #enquiryModal .form-control {
+        border-radius: 10px;
+        padding: 14px 18px;
+        border: 2px solid #eee;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .form-control:focus {
+        border-color: #f7631b;
+        box-shadow: 0 0 0 0.2rem rgba(247, 99, 27, 0.25);
+      }
+
+      #enquiryModal .btn-submit {
+        background-color: #f7631b;
+        border-color: #f7631b;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-submit:hover {
+        background-color: #e55612;
+        border-color: #e55612;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      #enquiryModal .btn-close {
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-close:hover {
+        background-color: #f1f1f1;
+      }
+
+      #enquiryModal label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      /* Mobile-specific styles */
+      @media (max-width: 768px) {
+        #enquiryModal .modal-dialog {
+          margin: 20px;
+        }
+
+        #enquiryModal .modal-header {
+          padding: 20px 20px 5px;
+        }
+
+        #enquiryModal .modal-body {
+          padding: 20px;
+        }
+
+        #enquiryModal .modal-footer {
+          padding: 0 20px 20px;
+        }
+
+        #enquiryModal .form-control {
+          padding: 12px 15px;
+          font-size: 0.95rem;
+        }
+
+        #enquiryModal .btn-submit,
+        #enquiryModal .btn-close {
+          padding: 10px 20px;
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Animation for modal */
+      .modal.fade .modal-dialog {
+        transform: translateY(20px);
+        transition: transform 0.3s ease-out;
+      }
+
+      .modal.show .modal-dialog {
+        transform: translateY(0);
+      }
+
+      /* Subpage Hero Area */
+      .subpage-hero-area {
+        background: linear-gradient(
+            135deg,
+            rgba(247, 99, 27, 0.03) 0%,
+            rgba(249, 249, 255, 0.95) 100%
+          ),
+          url("img/gallery-banner.jpg") no-repeat center center;
+        background-size: cover;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      @media (max-width: 768px) {
+        .subpage-hero-area {
+          padding: 100px 0 60px;
+        }
+        .subpage-hero-content h1 {
+          font-size: 2rem !important;
+        }
+        .subpage-hero-content p {
+          font-size: 1rem !important;
+          padding: 0 20px;
+        }
+      }
+
+      /* ========== Enhanced Gallery Styles ========== */
+      /* New hover effect with overlay */
+      .gallery-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(247, 99, 27, 0.2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+
+      .gallery-item:hover::before {
+        opacity: 1;
+      }
+
+      /* Zoom icon on hover */
+      .gallery-item::after {
+        content: "\f00e";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        color: white;
+        font-size: 2.5rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .gallery-item:hover::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      /* Improved filter buttons */
+      .gallery-filter {
+        position: relative;
+      }
+
+      .gallery-filter::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #ddd, transparent);
+      }
+
+      /* Loading animation */
+      @keyframes pulse {
+        0% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.6;
+        }
+      }
+
+      .loading-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+      }
+
+      .loading-gallery span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #f7631b;
+        margin: 0 5px;
+        animation: pulse 1.4s infinite ease-in-out;
+      }
+
+      .loading-gallery span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .loading-gallery span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      /* Image loading effect */
+      .gallery-item img {
+        filter: blur(3px);
+        transition: filter 0.5s ease;
+      }
+
+      .gallery-item img.loaded {
+        filter: blur(0);
+      }
+
+      /* Magnific Popup customizations */
+      .mfp-bg {
+        background: rgba(0, 0, 0, 0.9);
+      }
+
+      .mfp-image-holder .mfp-close,
+      .mfp-iframe-holder .mfp-close {
+        color: #fff;
+        right: -30px;
+        text-align: right;
+        padding-right: 0;
+        font-size: 40px;
+        width: 100%;
+      }
+
+      .mfp-figure:after {
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .mfp-figure .mfp-bottom-bar {
+        margin-top: -36px;
+      }
+
+      /* Counter for gallery images */
+      .mfp-counter {
+        color: #fff;
+        font-size: 16px;
+      }
+
+      /* New gallery layout option toggle */
+      .layout-toggle {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .layout-btn {
+        background: none;
+        border: none;
+        color: #777;
+        font-size: 1.2rem;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .layout-btn.active {
+        color: #f7631b;
+        transform: scale(1.2);
+      }
+
+      /* Masonry layout */
+      .gallery-grid.masonry {
+        display: block;
+        column-count: 3;
+        column-gap: 25px;
+      }
+
+      .gallery-grid.masonry .gallery-item {
+        display: inline-block;
+        margin-bottom: 25px;
+        width: 100%;
+      }
+
+      @media (max-width: 992px) {
+        .gallery-grid.masonry {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .gallery-grid.masonry {
+          column-count: 1;
+        }
+      }
+
+      /* Grid layout (default) */
+      .gallery-grid.grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+
+      /* Full-width hero image */
+      .gallery-hero-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        margin-bottom: 40px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Video gallery items */
+      .video-thumbnail {
+        position: relative;
+      }
+
+      .video-thumbnail::after {
+        content: "\f144";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 4rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        transition: all 0.3s;
+      }
+
+      .video-thumbnail:hover::after {
+        color: #f7631b;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 180px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        background: #333;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 999;
+      }
+
+      .back-to-top.show {
+        opacity: 0.7;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        opacity: 1;
+        background: #f7631b;
+        transform: translateY(-5px);
+      }
+
+      /* Image info in lightbox */
+      .mfp-title {
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand logo_h" href="index.html">
+              <img
+                src="img/FORMENlogo2 (1).png"
+                alt="FHC Institute Logo"
+                class="img-fluid custom-logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#about-section">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#faculty-section"
+                    >Faculties</a
+                  >
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="careers.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#contact-section"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--================ End Header Menu Area =================-->
+
+    <!--================ Start Gallery Hero Section =================-->
+    <section class="subpage-hero-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="subpage-hero-content text-center">
+              <div class="mb-3">
+                <span
+                  class="badge badge-primary px-4 py-2"
+                  style="
+                    background: rgba(247, 99, 27, 0.1);
+                    color: #f7631b;
+                    font-size: 1rem;
+                  "
+                >
+                  <i class="fas fa-camera mr-2"></i> FHC Institute Gallery
+                </span>
+              </div>
+              <h1
+                class="mb-3"
+                style="font-size: 2.5rem; font-weight: 700; color: #222"
+              >
+                Explore Our Campus Life
+              </h1>
+              <p
+                class="mb-4"
+                style="
+                  font-size: 1.2rem;
+                  color: #555;
+                  max-width: 700px;
+                  margin: 0 auto;
+                "
+              >
+                Discover our state-of-the-art facilities, student activities,
+                and learning environment through our photo gallery
+              </p>
+              <div class="hero-divider">
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+                <i
+                  class="fas fa-images mx-3"
+                  style="color: #f7631b; font-size: 1.8rem"
+                ></i>
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Gallery Hero Section =================-->
+
+    <!--================ Start Gallery Section =================-->
+    <!--================ Start Gallery Section =================-->
+    <section class="gallery-container">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Campus Gallery</h2>
+          <p>
+            Take a visual journey through our institute's facilities,
+            classrooms, and student activities
+          </p>
+        </div>
+
+        <!-- Gallery Filter Controls -->
+        <div class="gallery-filter text-center">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="classrooms">
+            Classrooms
+          </button>
+          <button class="filter-btn" data-filter="drugday">
+            Drug Awareness Day
+          </button>
+          <button class="filter-btn" data-filter="environmentday">
+            Environment Day
+          </button>
+          <button class="filter-btn" data-filter="kidneyday">Kidney Day</button>
+          <button class="filter-btn" data-filter="tobaccoday">
+            Tobacco Day
+          </button>
+          <button class="filter-btn" data-filter="campus">Campus</button>
+        </div>
+
+        <!-- Layout Toggle -->
+        <div class="layout-toggle">
+          <button
+            class="layout-btn active"
+            data-layout="grid"
+            title="Grid View"
+          >
+            <i class="fas fa-th"></i>
+          </button>
+          <button class="layout-btn" data-layout="masonry" title="Masonry View">
+            <i class="fas fa-th-large"></i>
+          </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid grid">
+          <!-- Featured Image -->
+          <div
+            class="gallery-item featured"
+            data-category="campus"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/REM06848 copy.jpg"
+          >
+            <a href="images/REM06848 copy.jpg">
+              <img
+                src="images/REM06848 copy.jpg"
+                alt="College Campus"
+                loading="lazy"
+                data-category="campus"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Our Beautiful Campus</h5>
+              <p>Modern facilities in a peaceful environment</p>
+            </div>
+            <span class="category-label">Featured</span>
+          </div>
+
+          <!-- Campus Images -->
+          <div
+            class="gallery-item"
+            data-category="campus"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/REM08087.jpg"
+          >
+            <a href="images/REM08087.jpg">
+              <img
+                src="images/REM08087.jpg"
+                alt="College Building"
+                loading="lazy"
+                data-category="campus"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Main Building</h5>
+              <p>Our state-of-the-art college building</p>
+            </div>
+            <span class="category-label">Campus</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="campus"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DSC05194.JPG"
+          >
+            <a href="images/DSC05194.JPG">
+              <img
+                src="images/DSC05194.JPG"
+                alt="College Entrance"
+                loading="lazy"
+                data-category="campus"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>College Entrance</h5>
+              <p>Welcoming students every day</p>
+            </div>
+            <span class="category-label">Campus</span>
+          </div>
+
+          <!-- Classroom Images -->
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom1.jpg"
+          >
+            <a href="images/clssroom/classroom1.jpg">
+              <img
+                src="images/clssroom/classroom1.jpg"
+                alt="Classroom 1"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Modern Classroom</h5>
+              <p>Spacious learning environment</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom2.jpg"
+          >
+            <a href="images/clssroom/classroom2.jpg">
+              <img
+                src="images/clssroom/classroom2.jpg"
+                alt="Classroom 2"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Interactive Learning</h5>
+              <p>Students engaged in classroom activities</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom3.jpg"
+          >
+            <a href="images/clssroom/classroom3.jpg">
+              <img
+                src="images/clssroom/classroom3.jpg"
+                alt="Classroom 3"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 3</h5>
+              <p>Well-lit and organized learning space</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom4.jpg"
+          >
+            <a href="images/clssroom/classroom4.jpg">
+              <img
+                src="images/clssroom/classroom4.jpg"
+                alt="Classroom 4"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 4</h5>
+              <p>Technology-enhanced teaching setup</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom5.jpg"
+          >
+            <a href="images/clssroom/classroom5.jpg">
+              <img
+                src="images/clssroom/classroom5.jpg"
+                alt="Classroom 5"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 5</h5>
+              <p>Collaborative group seating arrangement</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom6.jpg"
+          >
+            <a href="images/clssroom/classroom6.jpg">
+              <img
+                src="images/clssroom/classroom6.jpg"
+                alt="Classroom 6"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 6</h5>
+              <p>Comfortable seating and lighting</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom7.jpg"
+          >
+            <a href="images/clssroom/classroom7.jpg">
+              <img
+                src="images/clssroom/classroom7.jpg"
+                alt="Classroom 7"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 7</h5>
+              <p>Creative displays and whiteboard space</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom8.jpg"
+          >
+            <a href="images/clssroom/classroom8.jpg">
+              <img
+                src="images/clssroom/classroom8.jpg"
+                alt="Classroom 8"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 8</h5>
+              <p>Peaceful environment for focused learning</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom9.jpg"
+          >
+            <a href="images/clssroom/classroom9.jpg">
+              <img
+                src="images/clssroom/classroom9.jpg"
+                alt="Classroom 9"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 9</h5>
+              <p>Modern tools and clean design</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom10.jpg"
+          >
+            <a href="images/clssroom/classroom10.jpg">
+              <img
+                src="images/clssroom/classroom10.jpg"
+                alt="Classroom 10"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 10</h5>
+              <p>Colorful and student-friendly layout</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom11.jpg"
+          >
+            <a href="images/clssroom/classroom11.jpg">
+              <img
+                src="images/clssroom/classroom11.jpg"
+                alt="Classroom 11"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 11</h5>
+              <p>Flexible seating and open space</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="classrooms"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/clssroom/classroom12.jpg"
+          >
+            <a href="images/clssroom/classroom12.jpg">
+              <img
+                src="images/clssroom/classroom12.jpg"
+                alt="Classroom 12"
+                loading="lazy"
+                data-category="classrooms"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Classroom 12</h5>
+              <p>Inspiring decor and comfortable design</p>
+            </div>
+            <span class="category-label">Classroom</span>
+          </div>
+
+          <!-- Drug Day Images -->
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday1.jpg"
+          >
+            <a href="images/DrugDay/drugday1.jpg">
+              <img
+                src="images/DrugDay/drugday1.jpg"
+                alt="Drug Awareness Day 1"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Campaign</h5>
+              <p>Students participating in awareness activities</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday2.jpg"
+          >
+            <a href="images/DrugDay/drugday2.jpg">
+              <img
+                src="images/DrugDay/drugday2.jpg"
+                alt="Drug Awareness Day 2"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Guest Lecture</h5>
+              <p>Expert speaking on drug abuse prevention</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday3.jpg"
+          >
+            <a href="images/DrugDay/drugday3.jpg">
+              <img
+                src="images/DrugDay/drugday3.jpg"
+                alt="Drug Awareness Day 3"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Awareness Activities</h5>
+              <p>Students showcasing anti-drug messages</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday4.jpg"
+          >
+            <a href="images/DrugDay/drugday4.jpg">
+              <img
+                src="images/DrugDay/drugday4.jpg"
+                alt="Drug Awareness Day 4"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug-Free Pledge</h5>
+              <p>Collective oath for a drug-free life</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday5.jpg"
+          >
+            <a href="images/DrugDay/drugday5.jpg">
+              <img
+                src="images/DrugDay/drugday5.jpg"
+                alt="Drug Awareness Day 5"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Poster Competition</h5>
+              <p>Creative expressions against drug use</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday6.jpg"
+          >
+            <a href="images/DrugDay/drugday6.jpg">
+              <img
+                src="images/DrugDay/drugday6.jpg"
+                alt="Drug Awareness Day 6"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Student March</h5>
+              <p>Rally promoting healthy lifestyles</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday7.jpg"
+          >
+            <a href="images/DrugDay/drugday7.jpg">
+              <img
+                src="images/DrugDay/drugday7.jpg"
+                alt="Drug Awareness Day 7"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Speech Contest</h5>
+              <p>Students speaking out on substance abuse</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday8.jpg"
+          >
+            <a href="images/DrugDay/drugday8.jpg">
+              <img
+                src="images/DrugDay/drugday8.jpg"
+                alt="Drug Awareness Day 8"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Awareness Skit</h5>
+              <p>Dramatic performance on consequences of drugs</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday9.jpg"
+          >
+            <a href="images/DrugDay/drugday9.jpg">
+              <img
+                src="images/DrugDay/drugday9.jpg"
+                alt="Drug Awareness Day 9"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Information Booth</h5>
+              <p>Students sharing facts and stats on drug abuse</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday10.jpg"
+          >
+            <a href="images/DrugDay/drugday10.jpg">
+              <img
+                src="images/DrugDay/drugday10.jpg"
+                alt="Drug Awareness Day 10"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Wall Painting</h5>
+              <p>Artistic expression on addiction awareness</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday11.jpg"
+          >
+            <a href="images/DrugDay/drugday11.jpg">
+              <img
+                src="images/DrugDay/drugday11.jpg"
+                alt="Drug Awareness Day 11"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Group Discussion</h5>
+              <p>Interactive session among students</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday12.jpg"
+          >
+            <a href="images/DrugDay/drugday12.jpg">
+              <img
+                src="images/DrugDay/drugday12.jpg"
+                alt="Drug Awareness Day 12"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Community Message</h5>
+              <p>Students connecting with local communities</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday13.jpg"
+          >
+            <a href="images/DrugDay/drugday13.jpg">
+              <img
+                src="images/DrugDay/drugday13.jpg"
+                alt="Drug Awareness Day 13"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 13</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday14.jpg"
+          >
+            <a href="images/DrugDay/drugday14.jpg">
+              <img
+                src="images/DrugDay/drugday14.jpg"
+                alt="Drug Awareness Day 14"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 14</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday15.jpg"
+          >
+            <a href="images/DrugDay/drugday15.jpg">
+              <img
+                src="images/DrugDay/drugday15.jpg"
+                alt="Drug Awareness Day 15"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 15</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday16.jpg"
+          >
+            <a href="images/DrugDay/drugday16.jpg">
+              <img
+                src="images/DrugDay/drugday16.jpg"
+                alt="Drug Awareness Day 16"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 16</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday17.jpg"
+          >
+            <a href="images/DrugDay/drugday17.jpg">
+              <img
+                src="images/DrugDay/drugday17.jpg"
+                alt="Drug Awareness Day 17"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 17</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday18.jpg"
+          >
+            <a href="images/DrugDay/drugday18.jpg">
+              <img
+                src="images/DrugDay/drugday18.jpg"
+                alt="Drug Awareness Day 18"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 18</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday19.jpg"
+          >
+            <a href="images/DrugDay/drugday19.jpg">
+              <img
+                src="images/DrugDay/drugday19.jpg"
+                alt="Drug Awareness Day 19"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 19</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday20.jpg"
+          >
+            <a href="images/DrugDay/drugday20.jpg">
+              <img
+                src="images/DrugDay/drugday20.jpg"
+                alt="Drug Awareness Day 20"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 20</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday21.jpg"
+          >
+            <a href="images/DrugDay/drugday21.jpg">
+              <img
+                src="images/DrugDay/drugday21.jpg"
+                alt="Drug Awareness Day 21"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 21</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday22.jpg"
+          >
+            <a href="images/DrugDay/drugday22.jpg">
+              <img
+                src="images/DrugDay/drugday22.jpg"
+                alt="Drug Awareness Day 22"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 22</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday23.jpg"
+          >
+            <a href="images/DrugDay/drugday23.jpg">
+              <img
+                src="images/DrugDay/drugday23.jpg"
+                alt="Drug Awareness Day 23"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 23</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday24.jpg"
+          >
+            <a href="images/DrugDay/drugday24.jpg">
+              <img
+                src="images/DrugDay/drugday24.jpg"
+                alt="Drug Awareness Day 24"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 24</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday25.jpg"
+          >
+            <a href="images/DrugDay/drugday25.jpg">
+              <img
+                src="images/DrugDay/drugday25.jpg"
+                alt="Drug Awareness Day 25"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 25</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="drugday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/DrugDay/drugday26.jpg"
+          >
+            <a href="images/DrugDay/drugday26.jpg">
+              <img
+                src="images/DrugDay/drugday26.jpg"
+                alt="Drug Awareness Day 26"
+                loading="lazy"
+                data-category="drugday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Drug Awareness Day 26</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <!-- Environment Day Images -->
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday1.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday1.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday1.jpg"
+                alt="Environment Day 1"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day Celebration</h5>
+              <p>Students planting trees on campus</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday2.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday2.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday2.jpg"
+                alt="Environment Day 2"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Eco-Friendly Initiatives</h5>
+              <p>Promoting sustainable practices</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday3.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday3.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday3.jpg"
+                alt="Environment Day 3"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 3</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday4.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday4.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday4.jpg"
+                alt="Environment Day 4"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 4</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday5.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday5.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday5.jpg"
+                alt="Environment Day 5"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 5</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday6.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday6.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday6.jpg"
+                alt="Environment Day 6"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 6</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday7.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday7.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday7.jpg"
+                alt="Environment Day 7"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 7</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday8.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday8.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday8.jpg"
+                alt="Environment Day 8"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 8</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday9.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday9.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday9.jpg"
+                alt="Environment Day 9"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 9</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday10.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday10.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday10.jpg"
+                alt="Environment Day 10"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 10</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday11.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday11.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday11.jpg"
+                alt="Environment Day 11"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 11</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday12.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday12.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday12.jpg"
+                alt="Environment Day 12"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 12</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday13.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday13.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday13.jpg"
+                alt="Environment Day 13"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 13</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday14.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday14.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday14.jpg"
+                alt="Environment Day 14"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 14</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday15.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday15.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday15.jpg"
+                alt="Environment Day 15"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 15</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday16.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday16.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday16.jpg"
+                alt="Environment Day 16"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 16</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday17.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday17.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday17.jpg"
+                alt="Environment Day 17"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 17</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday18.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday18.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday18.jpg"
+                alt="Environment Day 18"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 18</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday19.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday19.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday19.jpg"
+                alt="Environment Day 19"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 19</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="environmentday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/EnvironmentDay/enviromentday20.jpg"
+          >
+            <a href="images/EnvironmentDay/enviromentday20.jpg">
+              <img
+                src="images/EnvironmentDay/enviromentday20.jpg"
+                alt="Environment Day 20"
+                loading="lazy"
+                data-category="environmentday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Environment Day 20</h5>
+              <p>Event moment captured</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <!-- Kidney Day Images -->
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday1.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday1.jpg">
+              <img
+                src="images/KidneyDay/kidneyday1.jpg"
+                alt="Kidney Day 1"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday2.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday2.jpg">
+              <img
+                src="images/KidneyDay/kidneyday2.jpg"
+                alt="Kidney Day 2"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Health Checkup Camp</h5>
+              <p>Free health screenings for students</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday3.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday3.jpg">
+              <img
+                src="images/KidneyDay/kidneyday3.jpg"
+                alt="Kidney Day 3"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday4.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday4.jpg">
+              <img
+                src="images/KidneyDay/kidneyday4.jpg"
+                alt="Kidney Day 4"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday5.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday5.jpg">
+              <img
+                src="images/KidneyDay/kidneyday5.jpg"
+                alt="Kidney Day 5"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday6.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday6.jpg">
+              <img
+                src="images/KidneyDay/kidneyday6.jpg"
+                alt="Kidney Day 6"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday7.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday7.jpg">
+              <img
+                src="images/KidneyDay/kidneyday7.jpg"
+                alt="Kidney Day 7"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday8.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday8.jpg">
+              <img
+                src="images/KidneyDay/kidneyday8.jpg"
+                alt="Kidney Day 8"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday9.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday9.jpg">
+              <img
+                src="images/KidneyDay/kidneyday9.jpg"
+                alt="Kidney Day 9"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday10.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday10.jpg">
+              <img
+                src="images/KidneyDay/kidneyday10.jpg"
+                alt="Kidney Day 10"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday11.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday11.jpg">
+              <img
+                src="images/KidneyDay/kidneyday11.jpg"
+                alt="Kidney Day 11"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday12.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday12.jpg">
+              <img
+                src="images/KidneyDay/kidneyday12.jpg"
+                alt="Kidney Day 12"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday13.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday13.jpg">
+              <img
+                src="images/KidneyDay/kidneyday13.jpg"
+                alt="Kidney Day 13"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday14.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday14.jpg">
+              <img
+                src="images/KidneyDay/kidneyday14.jpg"
+                alt="Kidney Day 14"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday15.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday15.jpg">
+              <img
+                src="images/KidneyDay/kidneyday15.jpg"
+                alt="Kidney Day 15"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday16.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday16.jpg">
+              <img
+                src="images/KidneyDay/kidneyday16.jpg"
+                alt="Kidney Day 16"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday17.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday17.jpg">
+              <img
+                src="images/KidneyDay/kidneyday17.jpg"
+                alt="Kidney Day 17"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday18.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday18.jpg">
+              <img
+                src="images/KidneyDay/kidneyday18.jpg"
+                alt="Kidney Day 18"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday19.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday19.jpg">
+              <img
+                src="images/KidneyDay/kidneyday19.jpg"
+                alt="Kidney Day 19"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="kidneyday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/KidneyDay/kidneyday20.jpg"
+          >
+            <a href="images/KidneyDay/kidneyday20.jpg">
+              <img
+                src="images/KidneyDay/kidneyday20.jpg"
+                alt="Kidney Day 20"
+                loading="lazy"
+                data-category="kidneyday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Kidney Health Awareness</h5>
+              <p>Students learning about kidney care</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <!-- Tobacco Day Images -->
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday1.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday1.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday1.jpg"
+                alt="Tobacco Day 1"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Anti-Tobacco Campaign</h5>
+              <p>Raising awareness about tobacco dangers</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday2.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday2.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday2.jpg"
+                alt="Tobacco Day 2"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Pledge Against Tobacco</h5>
+              <p>Students taking the no-tobacco pledge</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday3.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday3.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday3.jpg"
+                alt="Tobacco Day 3"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Tobacco-Free Poster</h5>
+              <p>Students creating awareness posters</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday4.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday4.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday4.jpg"
+                alt="Tobacco Day 4"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Awareness March</h5>
+              <p>Students walking for a cause</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday5.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday5.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday5.jpg"
+                alt="Tobacco Day 5"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Health Awareness Talk</h5>
+              <p>Doctors explaining tobacco’s effects</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday6.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday6.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday6.jpg"
+                alt="Tobacco Day 6"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Banner Display</h5>
+              <p>Students displaying anti-tobacco banners</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday7.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday7.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday7.jpg"
+                alt="Tobacco Day 7"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Skits by Students</h5>
+              <p>Performances highlighting tobacco risks</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday8.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday8.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday8.jpg"
+                alt="Tobacco Day 8"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Information Desk</h5>
+              <p>Students guiding peers about tobacco harm</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday9.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday9.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday9.jpg"
+                alt="Tobacco Day 9"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Wall of Promise</h5>
+              <p>Students signing anti-tobacco wall</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday10.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday10.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday10.jpg"
+                alt="Tobacco Day 10"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Quiz Competition</h5>
+              <p>Testing knowledge on tobacco awareness</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday11.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday11.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday11.jpg"
+                alt="Tobacco Day 11"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Essay Writing</h5>
+              <p>Students writing essays on tobacco harms</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            data-category="tobaccoday"
+            data-toggle="modal"
+            data-target="#lightboxModal"
+            data-img="images/TobaccoDay/kidneyday12.jpg"
+          >
+            <a href="images/TobaccoDay/kidneyday12.jpg">
+              <img
+                src="images/TobaccoDay/kidneyday12.jpg"
+                alt="Tobacco Day 12"
+                loading="lazy"
+                data-category="tobaccoday"
+                class="loaded"
+              />
+            </a>
+            <div class="gallery-caption">
+              <h5>Closing Ceremony</h5>
+              <p>Prize distribution and final messages</p>
+            </div>
+            <span class="category-label">Event</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Gallery Section =================-->
+
+
+    <!-- Lightbox Modal -->
+    <div
+      class="modal fade modal-lightbox"
+      id="lightboxModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body">
+            <img id="lightboxImage" src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          <!-- Contact Info -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>FHC INSTITUTE OF PARAMEDICAL SCIENCE</h4>
+            <ul>
+              <li>
+                <i class="ti-location-pin"></i> CD TOWER, 4th floor, Opposite to
+                Baby Memorial Hospital, Calicut
+              </li>
+              <li><i class="ti-mobile"></i> +91 8113 884 477</li>
+              <li><i class="ti-mobile"></i> +91 8593 883 322</li>
+              <li><i class="ti-email"></i> info@fhcinstitute.com</li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about-section">About</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="index.html#faculty-section">Faculties</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="index.html#contact-section">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Courses List -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Courses</h4>
+            <ul>
+              <li><a href="#">B.Voc Dialysis</a></li>
+              <li><a href="#">B.Sc Dialysis</a></li>
+              <li><a href="#">Hospital Admin</a></li>
+              <li><a href="#">GDA Program</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates about courses and admission details</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://formspree.io/f/your-form-id"
+                method="post"
+                class="form-inline"
+              >
+                <input
+                  class="form-control"
+                  name="email"
+                  placeholder="Your Email Address"
+                  required
+                  type="email"
+                />
+                <button class="click-btn btn btn-default">
+                  <span>Subscribe</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | FHC Institute of Paramedical Science
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href="#"><i class="ti-facebook"></i></a>
+            <a href="#"><i class="ti-twitter"></i></a>
+            <a href="#"><i class="ti-instagram"></i></a>
+            <a href="#"><i class="ti-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--================ End footer Area  =================-->
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/918113884477"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="enquiry-float">
+      <a href="#" id="enquiryButton" style="color: white">
+        <i class="fas fa-question"></i>
+        <span class="enquiry-text">Have a question?</span>
+      </a>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" title="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div
+      class="modal fade"
+      id="enquiryModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="enquiryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enquiryModalLabel">
+              <i class="fas fa-question-circle mr-2"></i>Quick Enquiry
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="enquiryForm">
+              <div class="form-group">
+                <label for="name"
+                  ><i class="fas fa-user mr-2"></i>Full Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone"
+                  ><i class="fas fa-phone-alt mr-2"></i>Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="+91 9876543210"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email"
+                  ><i class="fas fa-envelope mr-2"></i>Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="question"
+                  ><i class="fas fa-comment-dots mr-2"></i>Your Question</label
+                >
+                <textarea
+                  class="form-control"
+                  id="question"
+                  rows="3"
+                  placeholder="I'd like to know about..."
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-light btn-close"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-submit"
+              id="submitEnquiry"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+      // Lightbox functionality
+      $(document).ready(function () {
+        // Initialize Magnific Popup for image gallery
+        $(".gallery-grid").magnificPopup({
+          delegate: ".gallery-item:not(.video-thumbnail) a", // child items selector, by clicking on it popup will open
+          type: "image",
+          gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
+          },
+          image: {
+            titleSrc: function (item) {
+              return (
+                item.el.find(".gallery-caption h5").text() +
+                "<br>" +
+                item.el.find(".gallery-caption p").text()
+              );
+            },
+          },
+          callbacks: {
+            elementParse: function (item) {
+              if (item.el.hasClass("video-thumbnail")) {
+                (item.type = "iframe"),
+                  (item.iframe = {
+                    patterns: {
+                      youtube: {
+                        index: "youtube.com/",
+                        id: "v=",
+                        src: "//www.youtube.com/embed/%id%?autoplay=1",
+                      },
+                    },
+                  });
+              }
+            },
+          },
+        });
+
+        // Layout toggle functionality
+        $(".layout-btn").click(function () {
+          const layout = $(this).data("layout");
+          $(".layout-btn").removeClass("active");
+          $(this).addClass("active");
+
+          $(".gallery-grid").removeClass("grid masonry").addClass(layout);
+        });
+
+        // Gallery filtering with smooth transitions
+        $(".filter-btn").click(function (e) {
+          e.preventDefault();
+
+          // Remove active class from all buttons
+          $(".filter-btn").removeClass("active");
+          // Add active class to clicked button
+          $(this).addClass("active");
+
+          var filterValue = $(this).data("filter");
+
+          // Add transition class to gallery grid
+          $(".gallery-grid").addClass("filter-transition");
+
+          // Hide all items first with fade out
+          $(".gallery-item").fadeOut(300, function () {
+            // After fade out completes, show matching items with fade in
+            if (filterValue === "all") {
+              $(".gallery-item").fadeIn(300);
+            } else {
+              $(".gallery-item").each(function () {
+                if ($(this).data("category") === filterValue) {
+                  $(this).fadeIn(300);
+                }
+              });
+            }
+
+            // Remove transition class after animation completes
+            setTimeout(function () {
+              $(".gallery-grid").removeClass("filter-transition");
+            }, 300);
+          });
+        });
+
+        // Back to top button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 300) {
+            $(".back-to-top").addClass("show");
+          } else {
+            $(".back-to-top").removeClass("show");
+          }
+        });
+
+        $(".back-to-top").click(function (e) {
+          e.preventDefault();
+          $("html, body").animate({ scrollTop: 0 }, "300");
+        });
+
+        // Image lazy loading
+        function lazyLoadImages() {
+          $(".gallery-item img").each(function () {
+            if ($(this).hasClass("loaded")) return;
+
+            const img = new Image();
+            img.src = $(this).attr("src");
+            img.onload = () => {
+              $(this).addClass("loaded");
+            };
+          });
+        }
+
+        // Load first images immediately
+        lazyLoadImages();
+
+        // Load remaining images after page load
+        $(window).on("load", function () {
+          setTimeout(lazyLoadImages, 500);
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on("click", function (e) {
+          e.preventDefault();
+
+          var target = $(this.hash);
+          if (target.length) {
+            var scrollTo = target.offset().top - 80;
+
+            $("html, body").stop().animate(
+              {
+                scrollTop: scrollTo,
+              },
+              800
+            );
+          }
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Handle enquiry button click
+        $("#enquiryButton").click(function (e) {
+          e.preventDefault();
+          $("#enquiryModal").modal("show");
+
+          // Reset form when modal is shown
+          $("#enquiryForm")[0].reset();
+        });
+
+        // Handle form submission with better UX
+        $("#submitEnquiry").click(function () {
+          var $btn = $(this);
+          var originalText = $btn.html();
+
+          // Get form values
+          var name = $("#name").val().trim();
+          var phone = $("#phone").val().trim();
+          var email = $("#email").val().trim();
+          var question = $("#question").val().trim();
+
+          // Validate form
+          if (!name) {
+            showError($("#name"), "Please enter your name");
+            return;
+          }
+
+          if (!phone || !/^[0-9]{10,15}$/.test(phone)) {
+            showError($("#phone"), "Please enter a valid phone number");
+            return;
+          }
+
+          if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            showError($("#email"), "Please enter a valid email");
+            return;
+          }
+
+          if (!question) {
+            showError($("#question"), "Please enter your question");
+            return;
+          }
+
+          // Show loading state
+          $btn.html(
+            '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Submitting...'
+          );
+          $btn.prop("disabled", true);
+
+          // Simulate AJAX submission (replace with actual AJAX call)
+          setTimeout(function () {
+            // On success
+            $btn.html('<i class="fas fa-check mr-2"></i> Submitted!');
+
+            // Show success message
+            Swal.fire({
+              icon: "success",
+              title: "Thank You!",
+              text: "We have received your enquiry and will contact you shortly.",
+              confirmButtonColor: "#f7631b",
+            }).then(() => {
+              $("#enquiryModal").modal("hide");
+              $btn.html(originalText).prop("disabled", false);
+            });
+
+            // In real implementation, you would have:
+            // $.ajax({
+            //   url: 'submit-enquiry.php',
+            //   method: 'POST',
+            //   data: {name, phone, email, question},
+            //   success: function(response) {
+            //     // Handle success
+            //   },
+            //   error: function() {
+            //     // Handle error
+            //   }
+            // });
+          }, 1500);
+        });
+
+        // Clear error when user starts typing
+        $(".form-control").on("input", function () {
+          $(this).removeClass("is-invalid");
+          $(this).next(".invalid-feedback").remove();
+        });
+
+        // Helper function to show errors
+        function showError($element, message) {
+          $element.addClass("is-invalid");
+          $element.after(
+            '<div class="invalid-feedback" style="display:block;">' +
+              message +
+              "</div>"
+          );
+          $element.focus();
+
+          // Shake animation for error
+          $element.parent().addClass("animate__animated animate__headShake");
+          setTimeout(function () {
+            $element
+              .parent()
+              .removeClass("animate__animated animate__headShake");
+          }, 1000);
+        }
+      });
+    </script>
+  </body>
+</html>

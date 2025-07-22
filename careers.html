@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Careers - FHC Institute</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Consistent Float Buttons */
+      .enquiry-float {
+        position: fixed;
+        bottom: 110px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #f7631b;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover {
+        background: #e55612;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .enquiry-float i {
+        margin-top: 5px;
+      }
+
+      .enquiry-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .enquiry-float:hover .enquiry-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 36px;
+        right: 40px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .whatsapp-float:hover {
+        background: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .whatsapp-float i {
+        margin-top: 5px;
+      }
+
+      .whatsapp-text {
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover .whatsapp-text {
+        opacity: 1;
+        right: 80px;
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 100px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .enquiry-float {
+          bottom: 40px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+        }
+
+        .whatsapp-text,
+        .enquiry-text {
+          font-size: 12px;
+          padding: 6px 12px;
+          right: 60px;
+        }
+
+        .whatsapp-float:hover .whatsapp-text,
+        .enquiry-float:hover .enquiry-text {
+          right: 70px;
+        }
+      }
+
+      /* Logo size fix */
+      .navbar-brand img.custom-logo {
+        max-height: 50px;
+        width: auto;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 991px) {
+        .navbar-brand img.custom-logo {
+          max-height: 40px;
+        }
+      }
+
+      /* Navbar styles */
+      .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+      }
+
+      .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background: no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .navbar-light {
+        background-color: #f9f9ff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: #222 !important;
+        font-weight: 500;
+      }
+
+      .navbar-light .navbar-nav .active > .nav-link {
+        color: #f7631b !important;
+      }
+
+      .navbar-collapse {
+        transition: all 0.3s ease;
+      }
+
+      /* ==================== Careers Page Styles ==================== */
+      /* Updated Hero Section to match courses page */
+      .subpage-hero-area {
+        background: linear-gradient(
+            135deg,
+            rgba(247, 99, 27, 0.03) 0%,
+            rgba(249, 249, 255, 0.95) 100%
+          ),
+          url("img/careers-banner.jpg") no-repeat center center;
+        background-size: cover;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      .subpage-hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .subpage-hero-content p {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .hero-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        max-width: 300px;
+      }
+
+      .divider-line {
+        flex: 1;
+        height: 2px;
+        background: rgba(247, 99, 27, 0.3);
+      }
+
+      .hero-divider i {
+        color: #f7631b;
+        margin: 0 15px;
+        font-size: 1.8rem;
+      }
+
+      /* Rest of the original careers page styles remain unchanged */
+      .careers-intro {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .intro-content h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #222;
+      }
+
+      .intro-content p {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      /* Current Openings */
+      .job-openings {
+        padding: 80px 0;
+      }
+
+      .job-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .job-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      .job-meta {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .job-meta span {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        color: #777;
+        font-size: 0.95rem;
+      }
+
+      .job-meta i {
+        margin-right: 8px;
+        color: #f7631b;
+      }
+
+      .job-description {
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+
+      .job-requirements {
+        margin-bottom: 25px;
+      }
+
+      .job-requirements h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      .job-requirements ul {
+        padding-left: 20px;
+        color: #555;
+      }
+
+      .job-requirements li {
+        margin-bottom: 8px;
+      }
+
+      .apply-btn {
+        display: inline-block;
+        padding: 10px 30px;
+        background: #f7631b;
+        color: white;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .apply-btn:hover {
+        background: #e55612;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      /* Benefits Section */
+      .benefits-section {
+        padding: 80px 0;
+        background: url("img/benefits-bg.jpg") no-repeat center center;
+        background-size: cover;
+        position: relative;
+      }
+
+      .benefits-section:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(249, 249, 255, 0.95);
+      }
+
+      .benefit-box {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+      }
+
+      .benefit-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .benefit-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(247, 99, 27, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .benefit-icon i {
+        font-size: 1.8rem;
+        color: #f7631b;
+      }
+
+      .benefit-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      .benefit-desc {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Application Form */
+      .application-form {
+        padding: 80px 0;
+        background: #f9f9ff;
+      }
+
+      .form-container {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #222;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-control {
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #f7631b;
+        box-shadow: 0 0 0 0.2rem rgba(247, 99, 27, 0.25);
+      }
+
+      textarea.form-control {
+        height: auto;
+        min-height: 150px;
+      }
+
+      .form-label {
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        color: #555;
+      }
+
+      .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .file-upload-btn {
+        border: 2px dashed #ddd;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload-btn:hover {
+        border-color: #f7631b;
+        background: rgba(247, 99, 27, 0.05);
+      }
+
+      .file-upload-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .file-upload-text {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .file-upload-text i {
+        color: #f7631b;
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .submit-btn {
+        background: #f7631b;
+        color: white;
+        border: none;
+        padding: 12px 35px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: block;
+        margin: 40px auto 0;
+      }
+
+      .submit-btn:hover {
+        background: #e55612;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: #f7631b;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      /* Footer Styles */
+      .footer-area {
+        background: #222;
+        padding: 120px 0 30px;
+      }
+
+      .single-footer-widget h4 {
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .single-footer-widget ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .single-footer-widget ul li {
+        margin-bottom: 15px;
+        color: #bbb;
+        font-size: 14px;
+      }
+
+      .single-footer-widget ul li i {
+        margin-right: 10px;
+        color: #f7631b;
+      }
+
+      .single-footer-widget ul li a {
+        color: #bbb;
+        transition: all 0.3s ease;
+      }
+
+      .single-footer-widget ul li a:hover {
+        color: #f7631b;
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 30px;
+        margin-top: 50px;
+      }
+
+      .footer-text {
+        color: #bbb !important;
+      }
+
+      .footer-social a {
+        color: #bbb;
+        margin-left: 15px;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        color: #f7631b;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1200px) {
+        .careers-hero {
+          padding: 140px 0 90px;
+        }
+
+        .careers-hero h1 {
+          font-size: 2.8rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .careers-hero {
+          padding: 120px 0 80px;
+          clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .careers-hero h1 {
+          font-size: 2.4rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .form-container {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .careers-hero {
+          padding: 100px 0 70px;
+        }
+
+        .careers-hero h1 {
+          font-size: 2rem;
+        }
+
+        .careers-hero p {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .section-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .job-meta span {
+          margin-right: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .careers-hero {
+          padding: 80px 0 60px;
+          clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+        }
+
+        .careers-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+
+        .job-title {
+          font-size: 1.3rem;
+        }
+
+        .form-container {
+          padding: 20px;
+        }
+      }
+
+      /* Enhanced Enquiry Modal Styles */
+      #enquiryModal .modal-content {
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+      }
+
+      #enquiryModal .modal-header {
+        border-bottom: none;
+        padding: 25px 25px 5px;
+        background: linear-gradient(135deg, #f7631b 0%, #e55612 100%);
+        color: white;
+      }
+
+      #enquiryModal .modal-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      #enquiryModal .close {
+        color: white;
+        text-shadow: none;
+        opacity: 0.8;
+      }
+
+      #enquiryModal .close:hover {
+        opacity: 1;
+      }
+
+      #enquiryModal .modal-body {
+        padding: 25px;
+      }
+
+      #enquiryModal .modal-footer {
+        border-top: none;
+        padding: 0 25px 25px;
+        justify-content: space-between;
+      }
+
+      #enquiryModal .form-control {
+        border-radius: 10px;
+        padding: 14px 18px;
+        border: 2px solid #eee;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .form-control:focus {
+        border-color: #f7631b;
+        box-shadow: 0 0 0 0.2rem rgba(247, 99, 27, 0.25);
+      }
+
+      #enquiryModal .btn-submit {
+        background-color: #f7631b;
+        border-color: #f7631b;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-submit:hover {
+        background-color: #e55612;
+        border-color: #e55612;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(247, 99, 27, 0.3);
+      }
+
+      #enquiryModal .btn-close {
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s;
+      }
+
+      #enquiryModal .btn-close:hover {
+        background-color: #f1f1f1;
+      }
+
+      #enquiryModal label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
+
+      /* Mobile-specific styles */
+      @media (max-width: 768px) {
+        #enquiryModal .modal-dialog {
+          margin: 20px;
+        }
+
+        #enquiryModal .modal-header {
+          padding: 20px 20px 5px;
+        }
+
+        #enquiryModal .modal-body {
+          padding: 20px;
+        }
+
+        #enquiryModal .modal-footer {
+          padding: 0 20px 20px;
+        }
+
+        #enquiryModal .form-control {
+          padding: 12px 15px;
+          font-size: 0.95rem;
+        }
+
+        #enquiryModal .btn-submit,
+        #enquiryModal .btn-close {
+          padding: 10px 20px;
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Animation for modal */
+      .modal.fade .modal-dialog {
+        transform: translateY(20px);
+        transition: transform 0.3s ease-out;
+      }
+
+      .modal.show .modal-dialog {
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand logo_h" href="index.html">
+              <img
+                src="img/FORMENlogo2 (1).png"
+                alt="FHC Institute Logo"
+                class="img-fluid custom-logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#about-section">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#faculty-section"
+                    >Faculties</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="careers.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#contact-section"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--================ End Header Menu Area =================-->
+
+    <!--================ Start Careers Hero Section =================-->
+    <!-- Updated Hero Section to match courses page -->
+    <section class="subpage-hero-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="subpage-hero-content text-center">
+              <div class="mb-3">
+                <span
+                  class="badge badge-primary px-4 py-2"
+                  style="
+                    background: rgba(247, 99, 27, 0.1);
+                    color: #f7631b;
+                    font-size: 1rem;
+                  "
+                >
+                  <i class="fas fa-briefcase mr-2"></i> Career Opportunities
+                </span>
+              </div>
+              <h1
+                class="mb-3"
+                style="font-size: 2.5rem; font-weight: 700; color: #222"
+              >
+                Join Our Team
+              </h1>
+              <p
+                class="mb-4"
+                style="
+                  font-size: 1.2rem;
+                  color: #555;
+                  max-width: 700px;
+                  margin: 0 auto;
+                "
+              >
+                Build your career with FHC Institute and help shape the future
+                of paramedical education
+              </p>
+              <div class="hero-divider">
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+                <i
+                  class="fas fa-heartbeat mx-3"
+                  style="color: #f7631b; font-size: 1.8rem"
+                ></i>
+                <span
+                  class="divider-line"
+                  style="
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(247, 99, 27, 0.3);
+                  "
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Careers Hero Section =================-->
+
+    <!--================ Start Careers Intro Section =================-->
+    <section class="careers-intro">
+      <div class="container">
+        <div class="intro-content">
+          <h2>Why Work With Us?</h2>
+          <p>
+            At FHC Institute, we believe our people are our greatest asset.
+            We're committed to creating an environment where talented
+            professionals can grow, innovate, and make a real difference in
+            healthcare education. Join our team of passionate educators and
+            administrators who are dedicated to shaping the next generation of
+            paramedical professionals.
+          </p>
+          <p>
+            We offer competitive compensation, professional development
+            opportunities, and a supportive work culture that values work-life
+            balance.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--================ End Careers Intro Section =================-->
+
+    <!--================ Start Job Openings Section =================-->
+    <section class="job-openings">
+      <div class="container">
+        <div class="section-title">
+          <h2>Current Openings</h2>
+          <p>
+            Explore our available positions and find the perfect fit for your
+            skills and experience
+          </p>
+        </div>
+
+        <div class="row">
+          <!-- Job 1 -->
+          <div class="col-lg-6">
+            <div class="job-card">
+              <h3 class="job-title">Dialysis Technology Instructor</h3>
+              <div class="job-meta">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Calicut, Kerala</span
+                >
+                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                <span
+                  ><i class="fas fa-calendar-alt"></i> Immediate Joining</span
+                >
+              </div>
+              <p class="job-description">
+                We're seeking an experienced Dialysis Technician to join our
+                faculty team. The ideal candidate will have both clinical
+                experience and a passion for teaching the next generation of
+                dialysis professionals.
+              </p>
+              <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                  <li>B.Sc in Dialysis Technology or equivalent</li>
+                  <li>Minimum 3 years clinical experience</li>
+                  <li>Prior teaching experience preferred</li>
+                  <li>Excellent communication and presentation skills</li>
+                  <li>Valid BLS/ACLS certification</li>
+                </ul>
+              </div>
+              <a href="#apply-now" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="col-lg-6">
+            <div class="job-card">
+              <h3 class="job-title">Medical Lab Technology Faculty</h3>
+              <div class="job-meta">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Calicut, Kerala</span
+                >
+                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                <span
+                  ><i class="fas fa-calendar-alt"></i> Immediate Joining</span
+                >
+              </div>
+              <p class="job-description">
+                We're looking for a qualified MLT professional to join our
+                teaching staff. The role involves both classroom instruction and
+                hands-on laboratory training for diploma students.
+              </p>
+              <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                  <li>M.Sc in Medical Lab Technology or related field</li>
+                  <li>Minimum 2 years teaching or industry experience</li>
+                  <li>
+                    Strong knowledge of laboratory procedures and equipment
+                  </li>
+                  <li>Ability to develop course materials and assessments</li>
+                  <li>Excellent organizational skills</li>
+                </ul>
+              </div>
+              <a href="#apply-now" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="col-lg-6">
+            <div class="job-card">
+              <h3 class="job-title">Administrative Coordinator</h3>
+              <div class="job-meta">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Calicut, Kerala</span
+                >
+                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                <span
+                  ><i class="fas fa-calendar-alt"></i> Immediate Joining</span
+                >
+              </div>
+              <p class="job-description">
+                We need an organized and detail-oriented administrator to
+                coordinate our academic programs, student services, and office
+                operations.
+              </p>
+              <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                  <li>Bachelor's degree in any discipline</li>
+                  <li>
+                    2+ years administrative experience (education sector
+                    preferred)
+                  </li>
+                  <li>Excellent communication and interpersonal skills</li>
+                  <li>
+                    Proficiency in MS Office and student management systems
+                  </li>
+                  <li>Ability to multitask and meet deadlines</li>
+                </ul>
+              </div>
+              <a href="#apply-now" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="col-lg-6">
+            <div class="job-card">
+              <h3 class="job-title">Clinical Placement Officer</h3>
+              <div class="job-meta">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Calicut, Kerala</span
+                >
+                <span><i class="fas fa-briefcase"></i> Full-time</span>
+                <span
+                  ><i class="fas fa-calendar-alt"></i> Immediate Joining</span
+                >
+              </div>
+              <p class="job-description">
+                This role involves coordinating clinical placements for our
+                students with hospitals and healthcare facilities across the
+                region.
+              </p>
+              <div class="job-requirements">
+                <h4>Requirements:</h4>
+                <ul>
+                  <li>Degree in Healthcare Administration or related field</li>
+                  <li>
+                    Experience in healthcare education or hospital
+                    administration
+                  </li>
+                  <li>Strong networking and relationship-building skills</li>
+                  <li>Excellent organizational and coordination abilities</li>
+                  <li>
+                    Knowledge of local healthcare facilities and regulations
+                  </li>
+                </ul>
+              </div>
+              <a href="#apply-now" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Job Openings Section =================-->
+
+    <!--================ Start Benefits Section =================-->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Employee Benefits</h2>
+          <p>
+            We value our team members and offer comprehensive benefits to
+            support your professional and personal growth
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-rupee-sign"></i>
+              </div>
+              <h3 class="benefit-title">Competitive Salary</h3>
+              <p class="benefit-desc">
+                We offer industry-competitive compensation packages with regular
+                performance reviews and increments.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <h3 class="benefit-title">Professional Development</h3>
+              <p class="benefit-desc">
+                Access to workshops, conferences, and training programs to
+                enhance your skills and knowledge.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h3 class="benefit-title">Health Insurance</h3>
+              <p class="benefit-desc">
+                Comprehensive health coverage for you and your family, including
+                OPD and hospitalization.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <h3 class="benefit-title">Paid Time Off</h3>
+              <p class="benefit-desc">
+                Generous vacation days, sick leave, and holidays to maintain
+                work-life balance.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3 class="benefit-title">Work Environment</h3>
+              <p class="benefit-desc">
+                Modern facilities with a positive, collaborative culture that
+                values each team member.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="benefit-box">
+              <div class="benefit-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="benefit-title">Tuition Assistance</h3>
+              <p class="benefit-desc">
+                Support for continuing education and advanced degrees relevant
+                to your role.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Benefits Section =================-->
+
+    <!--================ Start Application Form Section =================-->
+    <section class="application-form" id="apply-now">
+      <div class="container">
+        <div class="section-title">
+          <h2>Apply Now</h2>
+          <p>Submit your application for one of our open positions</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="form-container">
+              <h3 class="form-title">Job Application Form</h3>
+              <form>
+                <div class="form-group">
+                  <label for="full-name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="full-name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="position" class="form-label"
+                    >Position Applying For</label
+                  >
+                  <select class="form-control" id="position" required>
+                    <option value="">Select Position</option>
+                    <option value="Dialysis Technology Instructor">
+                      Dialysis Technology Instructor
+                    </option>
+                    <option value="Medical Lab Technology Faculty">
+                      Medical Lab Technology Faculty
+                    </option>
+                    <option value="Administrative Coordinator">
+                      Administrative Coordinator
+                    </option>
+                    <option value="Clinical Placement Officer">
+                      Clinical Placement Officer
+                    </option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="experience" class="form-label"
+                    >Years of Experience</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="experience"
+                    min="0"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="cover-letter" class="form-label"
+                    >Cover Letter</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="cover-letter"
+                    rows="5"
+                    placeholder="Tell us why you're the right candidate for this position..."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Upload Resume/CV</label>
+                  <div class="file-upload">
+                    <div class="file-upload-btn">
+                      <div class="file-upload-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Click to upload or drag and drop</span>
+                        <small>PDF, DOC, DOCX (Max 5MB)</small>
+                      </div>
+                      <input
+                        type="file"
+                        class="file-upload-input"
+                        accept=".pdf,.doc,.docx"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  Submit Application
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Application Form Section =================-->
+
+    <!--================ Start footer Area  =================-->
+
+    <!--================ Start footer Area  =================-->
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          <!-- Institute Info -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>FHC INSTITUTE OF PARAMEDICAL SCIENCE</h4>
+            <ul>
+              <li>
+                <i class="ti-location-pin"></i> CD TOWER, 4th floor, Opposite to
+                Baby Memorial Hospital, Calicut
+              </li>
+              <li><i class="ti-mobile"></i> +91 8113 884 477</li>
+              <li><i class="ti-mobile"></i> +91 8593 883 322</li>
+              <li><i class="ti-email"></i> info@fhcinstitute.com</li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about-section">About</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="index.html#faculty-section">Faculties</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="index.html#contact-section">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Courses -->
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Courses</h4>
+            <ul>
+              <li><a href="#">B.Voc Dialysis</a></li>
+              <li><a href="#">B.Sc Dialysis</a></li>
+              <li><a href="#">Hospital Admin</a></li>
+              <li><a href="#">GDA Program</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>Subscribe to get updates about courses and admission details</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://formspree.io/f/your-form-id"
+                method="post"
+                class="form-inline"
+              >
+                <!-- Uncomment and configure to activate -->
+                <!-- 
+            <input
+              class="form-control"
+              name="email"
+              placeholder="Your Email Address"
+              required
+              type="email"
+            />
+            <button class="click-btn btn btn-default">
+              <span>Subscribe</span>
+            </button>
+            -->
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | FHC Institute of Paramedical Science
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href="#"><i class="ti-facebook"></i></a>
+            <a href="#"><i class="ti-twitter"></i></a>
+            <a href="#"><i class="ti-instagram"></i></a>
+            <a href="#"><i class="ti-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+    <!--================ End footer Area  =================-->
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/918113884477"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+      </a>
+    </div>
+
+    <div class="enquiry-float">
+      <a href="#" id="enquiryButton" style="color: white">
+        <i class="fas fa-question"></i>
+        <span class="enquiry-text">Have a question?</span>
+      </a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="enquiryModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="enquiryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enquiryModalLabel">
+              <i class="fas fa-question-circle mr-2"></i>Quick Enquiry
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="enquiryForm">
+              <div class="form-group">
+                <label for="name"
+                  ><i class="fas fa-user mr-2"></i>Full Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone"
+                  ><i class="fas fa-phone-alt mr-2"></i>Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="+91 9876543210"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email"
+                  ><i class="fas fa-envelope mr-2"></i>Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="question"
+                  ><i class="fas fa-comment-dots mr-2"></i>Your Question</label
+                >
+                <textarea
+                  class="form-control"
+                  id="question"
+                  rows="3"
+                  placeholder="I'd like to know about..."
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-light btn-close"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-submit"
+              id="submitEnquiry"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <script>
+      // File upload display
+      $(document).ready(function () {
+        $(".file-upload-input").change(function () {
+          var fileName = $(this).val().split("\\").pop();
+          if (fileName) {
+            $(".file-upload-text span").text(fileName);
+          }
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on("click", function (e) {
+          e.preventDefault();
+
+          var target = $(this.hash);
+          if (target.length) {
+            var scrollTo = target.offset().top - 80;
+
+            $("html, body").stop().animate(
+              {
+                scrollTop: scrollTo,
+              },
+              800
+            );
+          }
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Handle navigation from other pages to index.html sections
+        $('a[href*="#"]').on("click", function (e) {
+          // Check if link points to index.html
+          if (this.href.indexOf("index.html") !== -1 && this.hash !== "") {
+            e.preventDefault();
+
+            // Store the target section
+            var targetSection = this.hash;
+
+            // Navigate to index.html first
+            window.location.href = this.href;
+
+            // After page loads, scroll to the section
+            $(window).on("load", function () {
+              if (window.location.hash === targetSection) {
+                var target = $(targetSection);
+                if (target.length) {
+                  $("html, body").animate(
+                    {
+                      scrollTop: target.offset().top - 80,
+                    },
+                    800
+                  );
+                }
+              }
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // Handle enquiry button click
+        $("#enquiryButton").click(function (e) {
+          e.preventDefault();
+          $("#enquiryModal").modal("show");
+
+          // Reset form when modal is shown
+          $("#enquiryForm")[0].reset();
+        });
+
+        // Handle form submission with better UX
+        $("#submitEnquiry").click(function () {
+          var $btn = $(this);
+          var originalText = $btn.html();
+
+          // Get form values
+          var name = $("#name").val().trim();
+          var phone = $("#phone").val().trim();
+          var email = $("#email").val().trim();
+          var question = $("#question").val().trim();
+
+          // Validate form
+          if (!name) {
+            showError($("#name"), "Please enter your name");
+            return;
+          }
+
+          if (!phone || !/^[0-9]{10,15}$/.test(phone)) {
+            showError($("#phone"), "Please enter a valid phone number");
+            return;
+          }
+
+          if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            showError($("#email"), "Please enter a valid email");
+            return;
+          }
+
+          if (!question) {
+            showError($("#question"), "Please enter your question");
+            return;
+          }
+
+          // Show loading state
+          $btn.html(
+            '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Submitting...'
+          );
+          $btn.prop("disabled", true);
+
+          // Simulate AJAX submission (replace with actual AJAX call)
+          setTimeout(function () {
+            // On success
+            $btn.html('<i class="fas fa-check mr-2"></i> Submitted!');
+
+            // Show success message
+            Swal.fire({
+              icon: "success",
+              title: "Thank You!",
+              text: "We have received your enquiry and will contact you shortly.",
+              confirmButtonColor: "#f7631b",
+            }).then(() => {
+              $("#enquiryModal").modal("hide");
+              $btn.html(originalText).prop("disabled", false);
+            });
+
+            // In real implementation, you would have:
+            // $.ajax({
+            //   url: 'submit-enquiry.php',
+            //   method: 'POST',
+            //   data: {name, phone, email, question},
+            //   success: function(response) {
+            //     // Handle success
+            //   },
+            //   error: function() {
+            //     // Handle error
+            //   }
+            // });
+          }, 1500);
+        });
+
+        // Clear error when user starts typing
+        $(".form-control").on("input", function () {
+          $(this).removeClass("is-invalid");
+          $(this).next(".invalid-feedback").remove();
+        });
+
+        // Helper function to show errors
+        function showError($element, message) {
+          $element.addClass("is-invalid");
+          $element.after(
+            '<div class="invalid-feedback" style="display:block;">' +
+              message +
+              "</div>"
+          );
+          $element.focus();
+
+          // Shake animation for error
+          $element.parent().addClass("animate__animated animate__headShake");
+          setTimeout(function () {
+            $element
+              .parent()
+              .removeClass("animate__animated animate__headShake");
+          }, 1000);
+        }
+      });
+    </script>
+
+    <!-- Add these CDN links to your head section if not already present -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  </body>
+</html>
