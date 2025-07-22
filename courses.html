@@ -31,6 +31,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
+
     <style>
       /* Consistent Float Buttons */
       .enquiry-float {
@@ -970,7 +971,8 @@
           font-size: 1.8rem;
         }
       }
-           /* Enhanced Enquiry Modal Styles */
+
+      /* Enhanced Enquiry Modal Styles */
       #enquiryModal .modal-content {
         border-radius: 16px;
         border: none;
@@ -1099,6 +1101,201 @@
       .modal.show .modal-dialog {
         transform: translateY(0);
       }
+
+      /* Internship Feature Styles */
+      .internship-badge {
+        display: inline-block;
+        background: rgba(39, 174, 96, 0.1);
+        color: #27ae60;
+        padding: 6px 12px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .internship-badge i {
+        color: #27ae60;
+      }
+
+      .internship-feature .icon-bg {
+        background: rgba(39, 174, 96, 0.1);
+      }
+
+      .internship-feature .icon-bg i {
+        color: #27ae60;
+      }
+
+      /* ==================== Program Section Enhancements ==================== */
+      .programs-section {
+        padding: 80px 0;
+        background-color: #f9f9ff;
+      }
+
+      .program-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: none;
+        background: white;
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Color Variations for Course Blocks */
+      .program-card.dialysis-tech {
+        border-top: 4px solid #3498db;
+      }
+
+      .program-card.dialysis-science {
+        border-top: 4px solid #e74c3c;
+      }
+
+      .program-card.hospital-admin {
+        border-top: 4px solid #2ecc71;
+      }
+
+      .program-card.gda {
+        border-top: 4px solid #9b59b6;
+      }
+
+      .program-card .card-body {
+        padding: 25px;
+      }
+
+      .program-card .program-category {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      /* Category-specific colors */
+      .program-card.dialysis-tech .program-category {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+      }
+
+      .program-card.dialysis-science .program-category {
+        background: rgba(231, 76, 60, 0.1);
+        color: #e74c3c;
+      }
+
+      .program-card.hospital-admin .program-category {
+        background: rgba(46, 204, 113, 0.1);
+        color: #2ecc71;
+      }
+
+      .program-card.gda .program-category {
+        background: rgba(155, 89, 182, 0.1);
+        color: #9b59b6;
+      }
+
+      .program-card .program-title {
+        font-size: 1.4rem;
+        font-weight: 700; /* Bold font for titles */
+        margin-bottom: 15px;
+        color: #222;
+      }
+
+      .program-card .program-duration {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 15px;
+      }
+
+      .program-card .program-features {
+        margin-bottom: 20px;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .program-card .program-features li {
+        margin-bottom: 8px;
+        color: #555;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .program-card .program-features li:before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: #f7631b;
+      }
+
+      .program-card .program-btn {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        text-decoration: none;
+      }
+
+      /* Button colors matching category */
+      .program-card.dialysis-tech .program-btn {
+        background: #3498db;
+        color: white;
+      }
+
+      .program-card.dialysis-science .program-btn {
+        background: #e74c3c;
+        color: white;
+      }
+
+      .program-card.hospital-admin .program-btn {
+        background: #2ecc71;
+        color: white;
+      }
+
+      .program-card.gda .program-btn {
+        background: #9b59b6;
+        color: white;
+      }
+
+      .program-card .program-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        color: white;
+      }
+
+      .program-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+
+      .program-highlight {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+        color: #555;
+      }
+
+      .program-highlight i {
+        margin-right: 5px;
+        color: #f7631b;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .program-card .program-title {
+          font-size: 1.2rem;
+        }
+      }
     </style>
   </head>
 
@@ -1138,11 +1335,11 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="courses.html">Courses</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" href="index.html#faculty-section"
                     >Faculties</a
                   >
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a class="nav-link" href="gallery.html">Gallery</a>
                 </li>
@@ -1160,10 +1357,8 @@
         </nav>
       </div>
     </header>
-
     <!--================ End Header Menu Area =================-->
 
-    <!--================ Start Course Hero Section =================-->
     <!--================ Start Course Hero Section =================-->
     <section class="subpage-hero-area">
       <div class="container">
@@ -1258,142 +1453,187 @@
       }
     </style>
     <!--================ End Course Hero Section =================-->
-    <!--================ End Course Hero Section =================-->
-    <!--================ End Course Hero Section =================-->
 
-    <!--================ Start Popular Courses Area =================-->
-    <div class="popular_courses">
+    <!--================ Start Enhanced Programs Section =================-->
+    <section class="programs-section">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-5">
-            <div class="main_title">
-              <h2 class="mb-3">COURSES WE PROVIDE</h2>
-              <p>
-                Quality education in healthcare technology and administration
-              </p>
+          <div class="col-lg-8 text-center">
+            <div class="section-title">
+              <h2>Our Programs</h2>
+              <p>Comprehensive healthcare education with hands-on training</p>
             </div>
           </div>
         </div>
+
         <div class="row">
           <!-- B.Voc in Dialysis Technology -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single_course">
-              <div class="course_head">
-                <img
-                  class="img-fluid"
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  alt="Dialysis Technology"
-                />
-              </div>
-              <div class="course_content">
-                <span class="tag mb-4 d-inline-block">Medical Technology</span>
-                <h4 class="mb-3">
-                  <a href="course-details.html"
-                    >Bachelor of Vocation (B.Voc)<br />in Dialysis Technology<br />(3
-                    YEARS)</a
-                  >
-                </h4>
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="program-card dialysis-tech">
+              <div class="card-body">
+                <span class="program-category">Medical Technology</span>
+                <h3 class="program-title">
+                  Bachelor of Vocation (B.Voc) in Dialysis Technology
+                </h3>
+                <div class="program-duration">
+                  <i class="far fa-clock mr-2"></i>3 Years | Annual Intake
+                </div>
+
+                <div class="program-highlights">
+                  <div class="program-highlight">
+                    <i class="fas fa-user-graduate"></i> 40 Seats
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-briefcase"></i> 6-Month Internship
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-certificate"></i> NSDC Certified
+                  </div>
+                </div>
+
                 <p>
                   Comprehensive training in dialysis procedures, equipment
                   handling, and patient care for renal failure patients.
                 </p>
-                <div
-                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                >
-                  <div class="mt-lg-0 mt-3">
-                    <span class="meta_info mr-4">
-                      <a href="#"> <i class="ti-user mr-2"></i>40 Seats </a>
-                    </span>
-                    <span class="meta_info">
-                      <a href="#"> <i class="ti-calendar mr-2"></i>Annual </a>
-                    </span>
-                  </div>
-                </div>
+
+                <ul class="program-features">
+                  <li>Hands-on training with modern dialysis equipment</li>
+                  <li>Clinical rotations in partner hospitals</li>
+                  <li>Placement assistance upon completion</li>
+                  <li>Industry-experienced faculty</li>
+                </ul>
+
+                <a href="#" class="program-btn">Learn More</a>
               </div>
             </div>
           </div>
 
           <!-- B.Sc in Dialysis Technology -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single_course">
-              <div class="course_head">
-                <img
-                  class="img-fluid"
-                  src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  alt="Dialysis Science"
-                />
-              </div>
-              <div class="course_content">
-                <span class="tag mb-4 d-inline-block">Medical Science</span>
-                <h4 class="mb-3">
-                  <a href="course-details.html"
-                    >Bachelor of Science (B.Sc)<br />in Dialysis Technology<br />(3
-                    YEARS)</a
-                  >
-                </h4>
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="program-card dialysis-science">
+              <div class="card-body">
+                <span class="program-category">Medical Science</span>
+                <h3 class="program-title">
+                  Bachelor of Science (B.Sc) in Dialysis Technology
+                </h3>
+                <div class="program-duration">
+                  <i class="far fa-clock mr-2"></i>3 Years | Annual Intake
+                </div>
+
+                <div class="program-highlights">
+                  <div class="program-highlight">
+                    <i class="fas fa-user-graduate"></i> 40 Seats
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-briefcase"></i> 6-Month Internship
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-certificate"></i> UGC Recognized
+                  </div>
+                </div>
+
                 <p>
                   Scientific approach to dialysis technology with emphasis on
                   renal physiology and advanced treatment methods.
                 </p>
-                <div
-                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                >
-                  <div class="mt-lg-0 mt-3">
-                    <span class="meta_info mr-4">
-                      <a href="#"> <i class="ti-user mr-2"></i>40 Seats </a>
-                    </span>
-                    <span class="meta_info">
-                      <a href="#"> <i class="ti-calendar mr-2"></i>Annual </a>
-                    </span>
-                  </div>
-                </div>
+
+                <ul class="program-features">
+                  <li>In-depth study of renal anatomy and physiology</li>
+                  <li>Advanced dialysis techniques training</li>
+                  <li>Research-oriented curriculum</li>
+                  <li>Clinical exposure from first year</li>
+                </ul>
+
+                <a href="#" class="program-btn">Learn More</a>
               </div>
             </div>
           </div>
 
-          <!-- Hospital Administration & GDA -->
-          <div class="col-lg-4 col-md-6">
-            <div class="single_course">
-              <div class="course_head">
-                <img
-                  class="img-fluid"
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  alt="Hospital Administration"
-                />
-              </div>
-              <div class="course_content">
-                <span class="tag mb-4 d-inline-block"
-                  >Healthcare Management</span
-                >
-                <h4 class="mb-3">
-                  <a href="course-details.html"
-                    >Hospital Administration<br />& General Duty Assistant
-                    (GDA)<br />(6 MONTHS)</a
-                  >
-                </h4>
+          <!-- Hospital Administration -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="program-card hospital-admin">
+              <div class="card-body">
+                <span class="program-category">Healthcare Management</span>
+                <h3 class="program-title">
+                  Hospital Administration & General Duty Assistant (GDA)
+                </h3>
+                <div class="program-duration">
+                  <i class="far fa-clock mr-2"></i>6 Months | Biannual Intake
+                </div>
+
+                <div class="program-highlights">
+                  <div class="program-highlight">
+                    <i class="fas fa-user-graduate"></i> 60 Seats
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-briefcase"></i> 2-Month Internship
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-certificate"></i> Skill India Certified
+                  </div>
+                </div>
+
                 <p>
                   Training in hospital operations management and basic patient
                   care skills for healthcare support roles.
                 </p>
-                <div
-                  class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
-                >
-                  <div class="mt-lg-0 mt-3">
-                    <span class="meta_info mr-4">
-                      <a href="#"> <i class="ti-user mr-2"></i>60 Seats </a>
-                    </span>
-                    <span class="meta_info">
-                      <a href="#"> <i class="ti-calendar mr-2"></i>Biannual </a>
-                    </span>
+
+                <ul class="program-features">
+                  <li>Hospital management principles</li>
+                  <li>Patient care and assistance techniques</li>
+                  <li>Medical records management</li>
+                  <li>Healthcare communication skills</li>
+                </ul>
+
+                <a href="#" class="program-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- General Duty Assistant -->
+          <div class="col-lg-6 col-md-6 mb-4">
+            <div class="program-card gda">
+              <div class="card-body">
+                <span class="program-category">Patient Care</span>
+                <h3 class="program-title">
+                  General Duty Assistant (GDA) Program
+                </h3>
+                <div class="program-duration">
+                  <i class="far fa-clock mr-2"></i>6 Months | Biannual Intake
+                </div>
+
+                <div class="program-highlights">
+                  <div class="program-highlight">
+                    <i class="fas fa-user-graduate"></i> 60 Seats
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-briefcase"></i> 2-Month Internship
+                  </div>
+                  <div class="program-highlight">
+                    <i class="fas fa-certificate"></i> NSQF Certified
                   </div>
                 </div>
+
+                <p>
+                  Comprehensive training in basic patient care, hospital
+                  assistance, and healthcare support services.
+                </p>
+
+                <ul class="program-features">
+                  <li>Basic patient care techniques</li>
+                  <li>Hospital hygiene and safety</li>
+                  <li>Emergency response training</li>
+                  <li>Medical equipment handling</li>
+                </ul>
+
+                <a href="#" class="program-btn">Learn More</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--================ End Popular Courses Area =================-->
+    </section>
+    <!--================ End Enhanced Programs Section =================-->
 
     <!--================ Start Highlights Area =================-->
     <section class="highlight_area section_gap_top">
@@ -1444,19 +1684,19 @@
             </div>
           </div>
 
-          <!-- Expert Instructors -->
+          <!-- Internship Feature -->
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="highlight-card">
-              <div class="icon-bg">
-                <i class="fas fa-chalkboard-teacher"></i>
+              <div class="icon-bg internship-feature">
+                <i class="fas fa-clinic-medical"></i>
               </div>
               <div class="highlight-content">
-                <h4>Learn From Experts</h4>
+                <h4>Guaranteed Internships</h4>
                 <p>
-                  Faculty with 10-15 years clinical experience in nephrology and
-                  dialysis care
+                  All courses include hands-on training in our partner hospitals
+                  and dialysis centers
                 </p>
-                <div class="highlight-badge">Expert Led</div>
+                <div class="highlight-badge">Practical Experience</div>
               </div>
             </div>
           </div>
@@ -1490,6 +1730,19 @@
                   technologists play a critical role in the healthcare team by
                   ensuring safe and hygienic dialysis treatments for patients.
                 </p>
+
+                <div class="alert alert-success mt-4" role="alert">
+                  <h5>
+                    <i class="fas fa-briefcase mr-2"></i>Internship Program
+                  </h5>
+                  <p class="mb-0">
+                    All our courses include hands-on internship opportunities in
+                    leading healthcare settings to ensure practical experience.
+                    Students will complete their clinical training at our
+                    partner hospitals and dialysis centers, working with real
+                    patients under professional supervision.
+                  </p>
+                </div>
 
                 <p>
                   Throughout the course, students will acquire knowledge and
@@ -1792,14 +2045,14 @@
           </div>
 
           <div class="col-lg-4 col-md-6">
-            <div class="feature-box">
+            <div class="feature-box internship-feature">
               <div class="feature-icon">
-                <i class="fas fa-stethoscope"></i>
+                <i class="fas fa-clinic-medical"></i>
               </div>
-              <h3 class="feature-title">Modern Curriculum</h3>
+              <h3 class="feature-title">Clinical Internships</h3>
               <p class="feature-desc">
-                Up-to-date course content aligned with current healthcare
-                industry standards.
+                Mandatory internships in partner healthcare facilities providing
+                real-world experience
               </p>
             </div>
           </div>
@@ -1825,7 +2078,8 @@
               <p class="testimonial-text">
                 The B.Sc Dialysis program gave me both theoretical knowledge and
                 practical skills that helped me secure a job immediately after
-                graduation.
+                graduation. The internship at City Hospital was particularly
+                valuable.
               </p>
               <div class="testimonial-author">
                 <div class="author-img">
@@ -1846,7 +2100,9 @@
             <div class="testimonial-card">
               <p class="testimonial-text">
                 The hands-on training with actual dialysis machines prepared me
-                for real-world challenges in nephrology departments.
+                for real-world challenges in nephrology departments. My
+                internship experience helped me transition smoothly into my
+                current role.
               </p>
               <div class="testimonial-author">
                 <div class="author-img">
@@ -1868,7 +2124,8 @@
               <p class="testimonial-text">
                 The faculty's industry experience and personalized guidance
                 helped me transition smoothly into my hospital administration
-                role.
+                role. The internship gave me confidence to handle real hospital
+                operations.
               </p>
               <div class="testimonial-author">
                 <div class="author-img">
@@ -1895,14 +2152,13 @@
         <h2 class="cta-title">Ready to Start Your Healthcare Career?</h2>
         <p class="cta-desc">
           Join FHC Institute and take the first step towards a rewarding career
-          in paramedical sciences
+          in paramedical sciences with guaranteed internship opportunities
         </p>
         <a href="index.html#contact-section" class="cta-btn">Enquire Now</a>
       </div>
     </section>
     <!--================ End CTA Section =================-->
 
-    <!--================ Start footer Area  =================-->
     <!--================ Start footer Area  =================-->
     <footer class="footer-area section_gap">
       <div class="container">
@@ -1928,7 +2184,7 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="index.html#about-section">About</a></li>
               <li><a href="courses.html">Courses</a></li>
-              <li><a href="index.html#faculty-section">Faculties</a></li>
+              <!-- <li><a href="index.html#faculty-section">Faculties</a></li> -->
               <li><a href="gallery.html">Gallery</a></li>
               <li><a href="careers.html">Careers</a></li>
               <li><a href="index.html#contact-section">Contact</a></li>
@@ -1959,17 +2215,17 @@
               >
                 <!-- Uncomment and configure to activate -->
                 <!-- 
-            <input
-              class="form-control"
-              name="email"
-              placeholder="Your Email Address"
-              required
-              type="email"
-            />
-            <button class="click-btn btn btn-default">
-              <span>Subscribe</span>
-            </button>
-            -->
+                    <input
+                      class="form-control"
+                      name="email"
+                      placeholder="Your Email Address"
+                      required
+                      type="email"
+                    />
+                    <button class="click-btn btn btn-default">
+                      <span>Subscribe</span>
+                    </button>
+                    -->
               </form>
             </div>
           </div>
@@ -2007,7 +2263,7 @@
       </a>
     </div>
 
- <div class="enquiry-float">
+    <div class="enquiry-float">
       <a href="#" id="enquiryButton" style="color: white">
         <i class="fas fa-question"></i>
         <span class="enquiry-text">Have a question?</span>
@@ -2109,7 +2365,6 @@
       </div>
     </div>
 
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -2188,109 +2443,122 @@
         });
       });
     </script>
-     <script>
-    $(document).ready(function() {
-      // Handle enquiry button click
-      $('#enquiryButton').click(function(e) {
-        e.preventDefault();
-        $('#enquiryModal').modal('show');
-        
-        // Reset form when modal is shown
-        $('#enquiryForm')[0].reset();
-      });
-      
-      // Handle form submission with better UX
-      $('#submitEnquiry').click(function() {
-        var $btn = $(this);
-        var originalText = $btn.html();
-        
-        // Get form values
-        var name = $('#name').val().trim();
-        var phone = $('#phone').val().trim();
-        var email = $('#email').val().trim();
-        var question = $('#question').val().trim();
-        
-        // Validate form
-        if(!name) {
-          showError($('#name'), 'Please enter your name');
-          return;
-        }
-        
-        if(!phone || !/^[0-9]{10,15}$/.test(phone)) {
-          showError($('#phone'), 'Please enter a valid phone number');
-          return;
-        }
-        
-        if(!email || !/^\S+@\S+\.\S+$/.test(email)) {
-          showError($('#email'), 'Please enter a valid email');
-          return;
-        }
-        
-        if(!question) {
-          showError($('#question'), 'Please enter your question');
-          return;
-        }
-        
-        // Show loading state
-        $btn.html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Submitting...');
-        $btn.prop('disabled', true);
-        
-        // Simulate AJAX submission (replace with actual AJAX call)
-        setTimeout(function() {
-          // On success
-          $btn.html('<i class="fas fa-check mr-2"></i> Submitted!');
-          
-          // Show success message
-          Swal.fire({
-            icon: 'success',
-            title: 'Thank You!',
-            text: 'We have received your enquiry and will contact you shortly.',
-            confirmButtonColor: '#f7631b',
-          }).then(() => {
-            $('#enquiryModal').modal('hide');
-            $btn.html(originalText).prop('disabled', false);
-          });
-          
-          // In real implementation, you would have:
-          // $.ajax({
-          //   url: 'submit-enquiry.php',
-          //   method: 'POST',
-          //   data: {name, phone, email, question},
-          //   success: function(response) {
-          //     // Handle success
-          //   },
-          //   error: function() {
-          //     // Handle error
-          //   }
-          // });
-          
-        }, 1500);
-      });
-      
-      // Clear error when user starts typing
-      $('.form-control').on('input', function() {
-        $(this).removeClass('is-invalid');
-        $(this).next('.invalid-feedback').remove();
-      });
-      
-      // Helper function to show errors
-      function showError($element, message) {
-        $element.addClass('is-invalid');
-        $element.after('<div class="invalid-feedback" style="display:block;">'+message+'</div>');
-        $element.focus();
-        
-        // Shake animation for error
-        $element.parent().addClass('animate__animated animate__headShake');
-        setTimeout(function() {
-          $element.parent().removeClass('animate__animated animate__headShake');
-        }, 1000);
-      }
-    });
-  </script>
+    <script>
+      $(document).ready(function () {
+        // Handle enquiry button click
+        $("#enquiryButton").click(function (e) {
+          e.preventDefault();
+          $("#enquiryModal").modal("show");
 
-  <!-- Add these CDN links to your head section if not already present -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+          // Reset form when modal is shown
+          $("#enquiryForm")[0].reset();
+        });
+
+        // Handle form submission with better UX
+        $("#submitEnquiry").click(function () {
+          var $btn = $(this);
+          var originalText = $btn.html();
+
+          // Get form values
+          var name = $("#name").val().trim();
+          var phone = $("#phone").val().trim();
+          var email = $("#email").val().trim();
+          var question = $("#question").val().trim();
+
+          // Validate form
+          if (!name) {
+            showError($("#name"), "Please enter your name");
+            return;
+          }
+
+          if (!phone || !/^[0-9]{10,15}$/.test(phone)) {
+            showError($("#phone"), "Please enter a valid phone number");
+            return;
+          }
+
+          if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            showError($("#email"), "Please enter a valid email");
+            return;
+          }
+
+          if (!question) {
+            showError($("#question"), "Please enter your question");
+            return;
+          }
+
+          // Show loading state
+          $btn.html(
+            '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span> Submitting...'
+          );
+          $btn.prop("disabled", true);
+
+          // Simulate AJAX submission (replace with actual AJAX call)
+          setTimeout(function () {
+            // On success
+            $btn.html('<i class="fas fa-check mr-2"></i> Submitted!');
+
+            // Show success message
+            Swal.fire({
+              icon: "success",
+              title: "Thank You!",
+              text: "We have received your enquiry and will contact you shortly.",
+              confirmButtonColor: "#f7631b",
+            }).then(() => {
+              $("#enquiryModal").modal("hide");
+              $btn.html(originalText).prop("disabled", false);
+            });
+
+            // In real implementation, you would have:
+            // $.ajax({
+            //   url: 'submit-enquiry.php',
+            //   method: 'POST',
+            //   data: {name, phone, email, question},
+            //   success: function(response) {
+            //     // Handle success
+            //   },
+            //   error: function() {
+            //     // Handle error
+            //   }
+            // });
+          }, 1500);
+        });
+
+        // Clear error when user starts typing
+        $(".form-control").on("input", function () {
+          $(this).removeClass("is-invalid");
+          $(this).next(".invalid-feedback").remove();
+        });
+
+        // Helper function to show errors
+        function showError($element, message) {
+          $element.addClass("is-invalid");
+          $element.after(
+            '<div class="invalid-feedback" style="display:block;">' +
+              message +
+              "</div>"
+          );
+          $element.focus();
+
+          // Shake animation for error
+          $element.parent().addClass("animate__animated animate__headShake");
+          setTimeout(function () {
+            $element
+              .parent()
+              .removeClass("animate__animated animate__headShake");
+          }, 1000);
+        }
+      });
+    </script>
+
+    <!-- Add these CDN links to your head section if not already present -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
   </body>
 </html>
