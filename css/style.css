@@ -329,28 +329,48 @@ button:focus {
   z-index: 1;
   min-height: 900px;
   position: relative;
-  background: url(../img/banner/home-banner.jpg) no-repeat center;
-  background-size: cover; }
+  background: url(../images/REM08087.jpg) no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Add dark overlay */
+.home_banner_area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* adjust darkness here */
+  z-index: 2;
+}
+
+/* Make sure inner content appears above the overlay */
+.home_banner_area .banner_inner {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
   .home_banner_area .banner_inner {
-    position: absolute;
-    top: 40%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 100%; }
-    @media (max-width: 991px) {
-      .home_banner_area .banner_inner {
-        top: 50%; } }
-    .home_banner_area .banner_inner .banner_content h2 {
-      font-size: 48px;
-      font-weight: 500; }
-    .home_banner_area .banner_inner .banner_content p {
-      font-size: 20px;
-      color: #002347;
-      font-weight: 500; }
+    top: 50%;
+  }
+}
+
+.home_banner_area .banner_inner .banner_content h2 {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.home_banner_area .banner_inner .banner_content p {
+  font-size: 20px;
+  color: #002347;
+  font-weight: 500;
+}
 
 .blog_banner {
   min-height: 780px;
